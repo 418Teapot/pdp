@@ -1,18 +1,18 @@
 
-#include "ble_Mini.h"
+#include "ble_mini.h"
 
-// UNO 
+// UNO
 // TX: pin 1
 // RX: pin 0
-#if defined (__AVR_ATmega168__) || defined (__AVR_ATmega328P__) 
-	#define BLEMINI Serial 
+#if defined (__AVR_ATmega168__) || defined (__AVR_ATmega328P__)
+	#define BLEMINI Serial
 
 // other board
 // board					TX			RX
 // Leonardo			1				0
 // MEGA					18			19
 // DUE						18			19
-#else 
+#else
 	#define BLEMINI Serial1
 #endif
 
@@ -40,6 +40,6 @@ void BLEMini_write_bytes(unsigned char *dat, unsigned char len)
 
 int BLEMini_read()
 {
-	delay(10);	
+	delay(10);
 	return BLEMINI.read();
 }
