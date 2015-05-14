@@ -3,8 +3,8 @@
 
 $dbnm = "it_pdp";
 $usr = "root";
-$pass = "root";
-$host = "127.0.0.1";
+$pass = "m1tMySQL";
+$host = "localhost";
 
 
 $db = mysqli_connect(

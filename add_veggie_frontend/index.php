@@ -3,11 +3,12 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="da">
 <head>
 	<title>vøgt</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
     <script src="fields.js"></script>
+    <meta charset="utf-8" />
 </head>
 <body>
 
@@ -17,14 +18,15 @@
         while($row = mysqli_fetch_array($q, MYSQL_ASSOC)){
             echo "Dag: " . $row['date'] . 
                 " Type: " . $row['veggie'] . 
-                " Gram i alt: " . $row['amount'] .
+                " Gram i alt: " . $row['amount'] ."g. ".
                 "<br>";   
         }
+        mysqli_close($db);
     ?>
     
     <br>    
     <div id="readroot" style="display: none">
-        Grønsag:
+        Grøntsag:
         <!---<input type="text" name="veggie[]">--->
         <select id="veggie" name="veggie[]">
             <option value="Æbler">Æbler</option>
