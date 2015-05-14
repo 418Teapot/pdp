@@ -5,16 +5,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sand box #</title>
+	<title>vøgt</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<!--<  script src="script.js"></script>-->
     <script src="fields.js"></script>
 </head>
 <body>
-    <!---<div id="frame">
-        <div id="slider"></div>
-    </div>-->
-    
+
     <h1>Veggies in stock</h1>
     <?php 
       $q = mysqli_query($db, "SELECT * FROM stock") or die("Fejl: ".mysqli_error($db));
