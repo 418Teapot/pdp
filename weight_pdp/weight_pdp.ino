@@ -27,12 +27,18 @@ void setup() {
 
 void loop() {
 
+//TO DO: State machine all the things:
+//PROTOCOL:
+// '1' = start
+// '0' = stop
+// 't' = tare
+
   //while(Serial1.find('t'));
+  char TempString[10];  //  Hold The Convert Data
 
   double weight = scale.get_units()*-1*toGram;
   if(weight<0) weight=0;
 
-  char TempString[10];  //  Hold The Convert Data
   dtostrf(weight,3,0,TempString);
   // dtostrf( [doubleVar] , [sizeBeforePoint] , [sizeAfterPoint] , [WhereToStoreIt] )
   // String complexString = String(TempString);  // cast it to string from char
