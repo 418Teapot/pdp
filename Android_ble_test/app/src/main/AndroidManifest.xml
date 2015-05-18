@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.redbear.chat"
+    package="dk.http418.oconn"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -14,6 +14,10 @@
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="dk.http418.oconn.permission.C2D_MESSAGE" />
+
 
     <application
         android:allowBackup="true"
@@ -21,7 +25,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.redbear.chat.Main"
+            android:name=".Main"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -30,7 +34,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.redbear.chat.Chat" >
+        <activity android:name=".SelectVeggie" >
         </activity>
         <activity
             android:name=".Device"
@@ -38,8 +42,17 @@
         </activity>
 
         <service
-            android:name="com.redbear.chat.RBLService"
+            android:name=".RBLService"
             android:enabled="true" />
+
+        <activity
+            android:name=".VeggieWeight"
+            android:label="@string/title_activity_veggie_weight"
+            android:parentActivityName=".SelectVeggie" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="dk.http418.oconn.SelectVeggie" />
+        </activity>
     </application>
 
 </manifest>

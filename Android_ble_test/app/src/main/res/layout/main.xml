@@ -9,16 +9,15 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:text="Fobind til en vægt"
+        android:text="@string/connectdev"
         android:textSize="30sp" />
 
     <Button
-        android:id="@+id/btn"
-        style="@style/button_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:background="@drawable/red_button"
-        android:text="OK" />
+        android:text="@string/scan"
+        android:id="@+id/btn"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

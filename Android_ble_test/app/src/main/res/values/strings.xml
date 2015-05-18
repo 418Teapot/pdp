@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Chat</string>
-    <string name="action_settings">Settings</string>
-    <string name="searching">Searching....</string>
+    <string name="app_name">ØCONN</string>
+    <string name="action_settings">Indstillinger</string>
+    <string name="searching">Søger....</string>
+    <string name="connectdev">Forbind til en vægt</string>
+    <string name="OK">OK</string>
+    <string name="devs">Vægte</string>
+    <string name="scan">Skan efter vægte...</string>
+    <string name="selVeggie">Vælg en grøntsag</string>
+    <string name="title_activity_veggie_weight">VeggieWeight</string>
+
+    <string name="hello_world">Hello world!</string>
 
 </resources>

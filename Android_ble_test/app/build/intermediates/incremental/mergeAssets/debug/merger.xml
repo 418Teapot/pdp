@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/home/robotto/Hack/418/pdp/Android_ble_test/app/src/main/assets"/></dataSet><dataSet config="debug"><source path="/home/robotto/Hack/418/pdp/Android_ble_test/app/src/debug/assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/src/main/assets"/></dataSet><dataSet config="debug"><source path="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/src/debug/assets"/></dataSet></merger>

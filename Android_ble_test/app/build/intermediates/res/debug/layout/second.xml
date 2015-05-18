@@ -4,41 +4,8 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/textView"
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="vertical"
-        android:layout_weight="1"
-        android:textSize="20sp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="horizontal" >
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <EditText
-                android:id="@+id/editText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/send"
-                android:layout_marginRight="80dp" />
-
-            <Button
-                android:id="@+id/send"
-                style="@style/button_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_toLeftOf="@id/editText"
-                android:background="@drawable/red_button"
-                android:text="Send" />
-        </RelativeLayout>
-    </LinearLayout>
-
-</LinearLayout><!-- From: file:/home/robotto/Hack/418/pdp/Android_ble_test/app/src/main/res/layout/second.xml -->
+        android:layout_height="wrap_content"
+        android:id="@+id/veggieList" />
+</LinearLayout><!-- From: file:/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/src/main/res/layout/second.xml -->
