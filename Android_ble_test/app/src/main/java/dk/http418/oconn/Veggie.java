@@ -1,6 +1,10 @@
 package dk.http418.oconn;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+
+import java.io.Serializable;
 
 /**
  * Created by zeb on 14-05-15.
@@ -12,7 +16,20 @@ public class Veggie {
     private String date;
 
     private Drawable veggieImg;
+
+    public Drawable getStatusImg() {
+        return statusImg;
+    }
+
+    public void setStatusImg(Drawable statusImg) {
+        this.statusImg = statusImg;
+    }
+
+    private Drawable statusImg;
+
     private boolean isPacked;
+
+    private int collected = 0;
 
     public Veggie(String date, String name, int amount) {
         this.date = date;
@@ -50,4 +67,11 @@ public class Veggie {
         this.isPacked = wasPacked;
     }
 
+    public int getCollected() {
+        return collected;
+    }
+
+    public void setCollected(int collected) {
+        this.collected = collected;
+    }
 }

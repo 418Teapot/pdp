@@ -8,6 +8,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
 
 import android.app.Activity;
@@ -19,6 +20,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
@@ -105,6 +109,10 @@ public class SelectVeggie extends Activity {
 			@Override
 			public void onPostExecute(ArrayList<Veggie> veggies){
 				vegetables = veggies;
+				Drawable transparentDrawable = new ColorDrawable(Color.TRANSPARENT);
+				for(Veggie v : vegetables){
+					v.setStatusImg(transparentDrawable);
+				}
 				lv = (ListView) findViewById(R.id.veggieList);
 				v_adapter = new VeggieAdapter(ctx, R.layout.veggie_list, vegetables);
 				lv.setAdapter(v_adapter);
@@ -114,16 +122,18 @@ public class SelectVeggie extends Activity {
 
 						Veggie selVeggie = (Veggie) lv.getItemAtPosition(i);
 
+						if(selVeggie.isPacked())
 						Toast.makeText(getApplicationContext(),
 								"Du har valgt: "+selVeggie.getName(), Toast.LENGTH_LONG).show();
 
 						Intent veggieIntent = new Intent(ctx, VeggieWeight.class);
+						//veggieIntent.putExtras()
 						veggieIntent.putExtra("Name", selVeggie.getName());
 						veggieIntent.putExtra("Amt", selVeggie.getAmount());
-						//veggieIntent.putExtra("")
+						//veggieIntent.putExtra("veggie", selVeggie);
 						veggieIntent.putExtra("btName", mDeviceName);
 						veggieIntent.putExtra("btAdr", mDeviceAddress);
-						startActivity(veggieIntent);
+						startActivityForResult(veggieIntent, 1);
 
 					}
 				});
@@ -136,13 +146,29 @@ public class SelectVeggie extends Activity {
 						v.setImg(getResources().getDrawable(R.drawable.cheese));
 					} else if(v.getName().equals("Kaffe")){
 						v.setImg(getResources().getDrawable(R.drawable.kaffe));
-				 	} else {
+				 	} else if(v.getName().equals("Peberfrugt")){
+						v.setImg(getResources().getDrawable(R.drawable.peberfrugt));
+					} else {
 						v.setImg(getResources().getDrawable(R.drawable.test));
 					}
 				}
 			}
 
 		}.execute("");
+	}
+
+	@Override
+	protected void onActivityResult(int reqCode, int resCode, Intent data){
+		for(Veggie v : vegetables){
+			if(v.getName().equals(data.getStringExtra("veg_name"))){
+				v.setWasPacked(true);
+				v.setCollected(data.getIntExtra("packedAmt", 0));
+				v.setStatusImg(getResources().getDrawable(R.drawable.checkmark));
+				System.out.println("Vi har opdateret " + data.getStringExtra("veg_name") + " med " + data.getIntExtra("packedAmt", 0) + " g");
+				v_adapter.notifyDataSetChanged();
+
+			}
+		}
 	}
 
 	@Override
@@ -177,7 +203,6 @@ public class SelectVeggie extends Activity {
 		if (item.getItemId() == android.R.id.home) {
 			mBluetoothLeService.disconnect();
 			mBluetoothLeService.close();
-
 			System.exit(0);
 		}
 
@@ -202,6 +227,7 @@ public class SelectVeggie extends Activity {
 	}
 
 	private void displayData(byte[] byteArray) {
+		/*
 		if (byteArray != null) {
 			String data = new String(byteArray);
 			tv.append(data);
@@ -216,7 +242,7 @@ public class SelectVeggie extends Activity {
 				tv.scrollTo(0, scrollAmount);
 			else
 				tv.scrollTo(0, 0);
-		}
+		}*/
 	}
 
 	private void getGattService(BluetoothGattService gattService) {

@@ -43,8 +43,8 @@
             document.getElementById("fields").addEventListener("click", moreFields);
         </script>
     <form method="post" action="submit.php">
-        Dato: <br>
-        <input type="date" name="dag" min="2015-01-02"><br>
+        Uge: <br>
+        <input type="number" name="dag" min="1" max="52"><br>
         
         <span id="writeroot"></span>
         

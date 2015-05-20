@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 public class VeggieAdapter extends ArrayAdapter<Veggie> {
@@ -35,6 +37,24 @@ public class VeggieAdapter extends ArrayAdapter<Veggie> {
             TextView mt = (TextView) v.findViewById(R.id.middletext);
             TextView mtd = (TextView) v.findViewById(R.id.middletextdata);
             ImageView iv = (ImageView) v.findViewById(R.id.veggie_image);
+
+
+            TextView gt = (TextView) v.findViewById(R.id.gatheredText);
+            TextView gtd = (TextView) v.findViewById(R.id.gatheredTextData);
+
+            ImageView simg = (ImageView) v.findViewById(R.id.status_image);
+
+            if(simg != null){
+                simg.setImageDrawable(i.getStatusImg());
+            }
+
+            if(gt != null){
+                gt.setText("Pakket: ");
+            }
+
+            if(gtd != null){
+                gtd.setText(i.getCollected()+"g");
+            }
 
             if (tt != null){
                 tt.setText("Navn: ");

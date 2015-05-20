@@ -19,6 +19,7 @@ import android.os.IBinder;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -50,6 +51,10 @@ public class VeggieWeight extends Activity {
     private boolean overWeight;
 
     private AlertDialog.Builder owd;
+
+    private int amountPacked = 0;
+
+    private Intent intent;
 
     private final ServiceConnection mServiceConnection = new ServiceConnection(){
         @Override
@@ -96,7 +101,7 @@ public class VeggieWeight extends Activity {
         setContentView(R.layout.activity_veggie_weight);
 
         // vi henter vores data fra putExtra
-        Intent intent = getIntent();
+        intent = getIntent();
 
         //blueTooth
         mDevAdr = intent.getStringExtra("btAdr");
@@ -113,8 +118,11 @@ public class VeggieWeight extends Activity {
         confBtn = (Button) findViewById(R.id.confirmWeightBtn);
 
         // display
-        String veggie_name = intent.getStringExtra("Name");
+        //Veggie veg = (Veggie) intent.getSerializableExtra("veggie");
+        final String veggie_name = intent.getStringExtra("Name");
         int veggie_amt = intent.getIntExtra("Amt", 0);
+
+        getActionBar().setTitle("Afvej "+veggie_name);
 
         TextView nameView = (TextView) findViewById(R.id.veggieName);
         TextView amtView = (TextView) findViewById(R.id.totalWeight);
@@ -157,9 +165,35 @@ public class VeggieWeight extends Activity {
         pb.getProgressDrawable().setColorFilter(Color.GREEN, PorterDuff.Mode.MULTIPLY);
 
         // hookup til vægten
-
         Intent gattServiceIntent = new Intent(this, RBLService.class);
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
+
+        // hookup til knappen
+        confBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                System.out.println("JEG HAR NOK MAYN!");
+                unbindService(mServiceConnection);
+
+                Intent data = new Intent();
+
+                data.putExtra("veg_name", veggie_name);
+                data.putExtra("packedAmt", amountPacked);
+                if(getParent()== null){
+                    setResult(Activity.RESULT_OK, data);
+                } else {
+                    getParent().setResult(Activity.RESULT_OK, data);
+                }
+                finish();
+
+            }
+        });
+
+    }
+
+    private void updVeggie(){
+
     }
 
     @Override
@@ -174,6 +208,13 @@ public class VeggieWeight extends Activity {
         // Inflate the menu; this adds items to the action bar if it is present.
         //getMenuInflater().inflate(R.menu.menu_veggie_weight, menu);
         return true;
+    }
+
+    // handle back by unbinding bluetooth service!
+    @Override
+    public void onBackPressed(){
+        unbindService(mServiceConnection);
+        finish();
     }
 
     @Override
@@ -221,6 +262,7 @@ public class VeggieWeight extends Activity {
 
                 if(prog < 100) {
                     pb.getProgressDrawable().setColorFilter(Color.GREEN, PorterDuff.Mode.MULTIPLY);
+                    amountPacked = parsed;
                     //overWeight = false;
                     if(confBtn != null && !confBtn.isEnabled()){
                         confBtn.setText("Jeg har nok!");
