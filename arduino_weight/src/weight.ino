@@ -14,20 +14,8 @@ double toGram = 5.68;	//hardware dependent calibration factor, TBD.
 
 void setup() {
   Serial1.begin(19200); //for the BLE module, custom baud rate, see: https://github.com/RedBearLab/Biscuit/wiki/BLEMini_BiscuitCompile#characteristics
-
-  //scale.read_average(20); // average of 20 readings from the ADC
-  //scale.get_value(5);		// print the average of 5 readings from the ADC minus the tare weight (not set yet)
-  //scale.get_units(5);	//The average of 5 readings from the ADC minus tare weight (not set) divided
-						// by the SCALE parameter (not set yet)
-
   scale.set_scale(2280.f);    // this value is obtained by calibrating the scale with known weights; see the README for details
   scale.tare();			      // reset the scale to 0
-
-  //scale.read());              // print a raw reading from the ADC
-  //scale.read_average(20);     // print the average of 20 readings from the ADC
-  //scale.get_value(5);			// print the average of 5 readings from the ADC minus the tare weight, set with tare()
-  //scale.get_units(5);        	// print the average of 5 readings from the ADC minus tare weight, divided
-								// by the SCALE parameter set with set_scale
 }
 
 //enum to hold different states:
