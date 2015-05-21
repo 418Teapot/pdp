@@ -41,7 +41,14 @@ public class Device extends Activity implements OnItemClickListener {
 
 		listView = (ListView) findViewById(R.id.listView);
 
+		System.out.println("DBG OUT: List Size "+listItems.size());
+		if(listItems.size() > 0){
+			// listen burde være tom!
+			listItems.clear();
+		}
+
 		devices = (ArrayList<BluetoothDevice>) Main.mDevices;
+
 		for (BluetoothDevice device : devices) {
 			if(device.getName() != null && device.getName().contains("#")) {
 				map = new HashMap<String, String>();

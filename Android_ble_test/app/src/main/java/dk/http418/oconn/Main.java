@@ -72,6 +72,13 @@ public class Main extends Activity {
 			
 			@Override
 			public void onClick(View v) {
+
+				// hvis vi re-scanner efter devices (e.g.) nogen har booket et der er registreret
+				// på denne måde fjernes det fra listen!
+
+				if(mDevices.size() > 0){
+					mDevices.clear();
+				}
 				scanLeDevice();
 
 				showRoundProcessDialog(Main.this, R.layout.loading_process_dialog_anim);
@@ -90,7 +97,7 @@ public class Main extends Activity {
 			}
 		});
 
-		scanLeDevice();
+		//scanLeDevice();
 
 		showRoundProcessDialog(Main.this, R.layout.loading_process_dialog_anim);
 

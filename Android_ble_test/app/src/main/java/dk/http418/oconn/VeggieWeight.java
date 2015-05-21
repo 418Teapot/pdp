@@ -213,8 +213,9 @@ public class VeggieWeight extends Activity {
     // handle back by unbinding bluetooth service!
     @Override
     public void onBackPressed(){
-        unbindService(mServiceConnection);
-        finish();
+        System.out.println("onBack returned!");
+        //unbindService(mServiceConnection);
+        //finish();
     }
 
     @Override

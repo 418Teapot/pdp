@@ -10,8 +10,10 @@
     <string name="scan">Skan efter vægte...</string>
     <string name="selVeggie">Vælg en grøntsag</string>
     <string name="title_activity_veggie_weight">VeggieWeight</string>
-
+    <string name="logout">Log ud</string>
+    <string name="checkout">Check ud</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_scan_weight">Skan Vægt</string>
 
 
 </resources>

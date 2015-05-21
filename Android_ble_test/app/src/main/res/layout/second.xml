@@ -3,9 +3,15 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/veggieList" />
+        android:id="@+id/veggieList"
+        android:layout_weight="1" />
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="62dp"
+        android:text="@string/checkout"
+        android:id="@+id/checkout_knap" />
+
 </LinearLayout>

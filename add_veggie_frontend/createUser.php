@@ -19,6 +19,7 @@ if($_POST != null){ // post er ikke submitted!
         <meta charset="utf-8" />
     </head>
     <body>
+        <h2>Opret bruger</h2>
         <form method="post">
             <p>Brugernavn:
                 <input type="text" id="navn" name="navn" required /></p>

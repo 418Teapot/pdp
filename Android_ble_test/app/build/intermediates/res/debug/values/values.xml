@@ -56,6 +56,7 @@
     <!-- From: file:/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="app_name">ØCONN</string>
+    <string name="checkout">Check ud</string>
     <!-- From: file:/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.3.0/res/values/common_strings.xml -->
     <eat-comment/>
     <string name="common_android_wear_notification_needs_update_text">An application requires an update to the Android Wear app.</string>
@@ -110,6 +111,7 @@ available. Please contact the developer for assistance.</string>
     <!-- From: file:/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="hello_world">Hello world!</string>
+    <string name="logout">Log ud</string>
     <!-- From: file:/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/src/main/res/values/strings_activity_login.xml -->
     <eat-comment/>
     <string name="plus_disconnect">Disconnect from Google+</string>
@@ -130,6 +132,7 @@ available. Please contact the developer for assistance.</string>
     <string name="title_activity_login">Log på ØCONN</string>
     <!-- From: file:/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/src/main/res/values/strings.xml -->
     <eat-comment/>
+    <string name="title_activity_scan_weight">Skan Vægt</string>
     <string name="title_activity_veggie_weight">VeggieWeight</string>
     <!-- From: file:/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.3.0/res/values/wallet_strings.xml -->
     <eat-comment/>

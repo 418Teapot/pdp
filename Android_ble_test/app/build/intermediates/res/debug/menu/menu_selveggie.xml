@@ -1,6 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" tools:context="dk.http418.oconn.LoginActivity">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
+
+    <item android:id="@+id/logout" android:title="@string/logout"
         android:orderInCategory="100" android:showAsAction="never" />
 </menu>
-<!-- From: file:/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/src/main/res/menu/menu_login.xml -->
+<!-- From: file:/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/src/main/res/menu/menu_selveggie.xml -->

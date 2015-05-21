@@ -37,7 +37,7 @@ public class LoginActivity extends Activity {
 
         if(loggedOn){
             System.out.println("Vi er allerede logget på!");
-            Intent intent = new Intent(getApplicationContext(), Main.class);
+            Intent intent = new Intent(getApplicationContext(), ScanWeight.class);
             startActivity(intent);
             finish();
         }
@@ -73,7 +73,7 @@ public class LoginActivity extends Activity {
                                 edit.putBoolean(LOGON_STR, true);
                                 edit.commit();
                                 System.out.println("LOGGED IN!");
-                                Intent intent = new Intent(getApplicationContext(), Main.class);
+                                Intent intent = new Intent(getApplicationContext(), ScanWeight.class);
                                 startActivity(intent);
                                 finish();
 
@@ -120,7 +120,7 @@ public class LoginActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.menu_login, menu);
+        //getMenuInflater().inflate(R.menu.menu_selveggie, menu);
         return true;
     }
 
