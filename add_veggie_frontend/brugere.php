@@ -25,7 +25,7 @@
             <h3>Book uge(r) til <span id="bookUser"></span></h3>
             <p>Bookede uger: <span id="weeksBookedSpan"></span></p>
             <p>Book en uge</p>
-            <input type="number" min="1" max="52" id="weekToBook" />
+            <input type="number" min="1" max="52" id="weekToBook" required/>
             <button onclick="bookAWeek();">Book Uge</button>
         </div>
         
@@ -55,8 +55,9 @@
         }
         
         function bookAWeek(){
-               if(selUser != ""){
-                   var newWeek = $('#weekToBook').val();
+            var newWeek = $('#weekToBook').val();
+            
+               if(selUser != "" && newWeek != null && newWeek != "" && newWeek != " "){                   
                    var weeks2Book = "";
                    
                    if(selWeeks == ""){

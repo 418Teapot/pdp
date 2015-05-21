@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="3b4ff5c39dace8f3b4ab4cab8191785547a0815f">
+        <dex dex="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/pre-dexed/debug/classes-825ca3714cd28df308e6190049b446f06c8885de.jar" />
+    </item>
+    <item
+        jar="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
+        <dex dex="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/pre-dexed/debug/classes-5cc8433aea7f250360823b77083b5b265868b115.jar" />
+    </item>
+    <item
+        jar="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e5bf453b070c1e39297986144960e45afa0fdfad">
+        <dex dex="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/pre-dexed/debug/classes-bf7f11d7904cd6780563d32507cf2b90eb294972.jar" />
+    </item>
+    <item
+        jar="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f2f7ec211ce4d244ee97a57523eeb4526dc3cf8a">
+        <dex dex="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/pre-dexed/debug/classes-8e742a6d0d160938c23e7400c5e729a07fa79e31.jar" />
+    </item>
+    <item
+        jar="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="0708ef60917bf94913fe9ef972a655b99462dca7">
+        <dex dex="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/pre-dexed/debug/classes-d025d775db66c9ba029ad59a57cf6e716652e807.jar" />
+    </item>
+    <item
+        jar="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4f4fe3c23776540625f3c2844152a7510fddf9f1">
+        <dex dex="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/pre-dexed/debug/classes-ba82bcba30aaffd52f59f3d6c8dfe9052cedf9dc.jar" />
+    </item>
+    <item
+        jar="/home/zeb/bin/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/22.1.1/support-annotations-22.1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
+        <dex dex="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/pre-dexed/debug/support-annotations-22.1.1-cd7c731e8cd1c8e341506157f57ff877356a2265.jar" />
+    </item>
+    <item
+        jar="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="565a01f90f1529f73362707c4c185d0623a68782">
+        <dex dex="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/pre-dexed/debug/classes-23a15d01bd7ae77a15f2b3b8e463e59baad26d3f.jar" />
+    </item>
+    <item
+        jar="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="3988694bf9d8186ff97ad5cdfa4ed88b5010fe08">
+        <dex dex="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/pre-dexed/debug/classes-41a12c0e571258b5c5234d021ae56bda4e99bbaa.jar" />
+    </item>
+    <item
+        jar="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e35fae1b377c23aa5fd2d309a190c2d0f73d54ec">
+        <dex dex="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/pre-dexed/debug/classes-06db5a336b4397afffd8f05f92feb4ea3de359b8.jar" />
+    </item>
+    <item
+        jar="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a0ce76dfaccbfbd6c551ed2174280aaabe60fe47">
+        <dex dex="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/pre-dexed/debug/classes-5f4a07f191801cbf7336766541d2d6d50a2d968d.jar" />
+    </item>
+    <item
+        jar="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6046e5cdaf799120b7c56a5a061d80e8854c4d34">
+        <dex dex="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/pre-dexed/debug/classes-78500990b2c9fd5faa5f613de2fb88fb37ce49c4.jar" />
+    </item>
+    <item
+        jar="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="9c9dea9e85aceb09d95df5e6f7bc8a43fc286068">
+        <dex dex="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/pre-dexed/debug/classes-68410a1422ffc635ec635151c710aa2c435beffb.jar" />
+    </item>
+    <item
+        jar="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="5ea948d825957be6c4358c48422bee60eef2d487">
+        <dex dex="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/pre-dexed/debug/classes-af54beaa82e36807dc30acbd04418c488cebffa8.jar" />
+    </item>
+    <item
+        jar="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b48d5c51a9a9e329005106b4667f54948de4d4d8">
+        <dex dex="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/pre-dexed/debug/classes-08434443b816333d6d6696c6e47a9039d14e7c8a.jar" />
+    </item>
+    <item
+        jar="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="fe3e0c6de7cceed888b277487238b6af9a1cc299">
+        <dex dex="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/pre-dexed/debug/classes-d2240c34694921edbac85e76c770c228870350be.jar" />
+    </item>
+    <item
+        jar="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/jars/libs/internal_impl-22.1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
+        <dex dex="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/pre-dexed/debug/internal_impl-22.1.1-25a656e0c4e0a684a770d017bf037e90ce098792.jar" />
+    </item>
+    <item
+        jar="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="7215ac1f2fca947b9415a6ee2a1bf991364aab24">
+        <dex dex="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/pre-dexed/debug/classes-b5b9c9d15f660b24740f57d0db7ae6b835a898eb.jar" />
+    </item>
+    <item
+        jar="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="0180d031a7b54dabb93b4af3869468b55dc938bd">
+        <dex dex="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/pre-dexed/debug/classes-33d5d6f21705114e390c90e2aa5a5a48cd827444.jar" />
+    </item>
+    <item
+        jar="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b2c07cdb814fe988ad05f7b4d767a841514a5991">
+        <dex dex="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/pre-dexed/debug/classes-2c42618aec79501a4927de90bd3bb71db427b747.jar" />
+    </item>
+    <item
+        jar="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="59652857a825fff0de62166fca1bc9553cc01abb">
+        <dex dex="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/pre-dexed/debug/classes-ff58bf2affdb28e0647ed06be2d3da51251ac6e5.jar" />
+    </item>
+    <item
+        jar="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e5b9f5b0aa8dee788beb63d23832cb29ce771343">
+        <dex dex="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/pre-dexed/debug/classes-7888392dbaf4ab812ec38986364d82eba974b57a.jar" />
+    </item>
+    <item
+        jar="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/libs/zbar.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="0a7b88ba1496a0b4af76069ad40dacd3897149e0">
+        <dex dex="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/pre-dexed/debug/zbar-d5fa63b1bc112ea962efa045ff6cf6e8500290bb.jar" />
+    </item>
+    <item
+        jar="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="bb36004beb02b69562cbec9aa7d6a3cf16bf5d1b">
+        <dex dex="/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/build/intermediates/pre-dexed/debug/classes-ce7632b68058ff62afeca8cfb894ffeeaf55f240.jar" />
+    </item>
+
+</items>

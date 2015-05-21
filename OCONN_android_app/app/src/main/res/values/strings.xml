@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ØCONN</string>
+    <string name="action_settings">Indstillinger</string>
+    <string name="searching">Søger...</string>
+    <string name="connectdev">Forbinder til vægt</string>
+    <string name="OK">OK</string>
+    <string name="devs">Vægte</string>
+    <string name="scan">Scanner</string>
+    <string name="selVeggie">Vælg en grøntsag</string>
+    <string name="title_activity_veggie_weight">VeggieWeight</string>
+    <string name="logout">Log ud</string>
+    <string name="checkout">Check ud</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_scan_weight">Skan Vægt</string>
+
+
+</resources>
