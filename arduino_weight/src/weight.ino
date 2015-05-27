@@ -1,5 +1,18 @@
 #include "HX711.h"
 
+#define DEBUG
+
+#ifdef DEBUG
+ #define DEBUG_PRINT(x)     Serial.print (x)
+ //#define DEBUG_PRINTDEC(x)     Serial.print (x, DEC)
+ #define DEBUG_PRINTLN(x)  Serial.println (x)
+#else
+ #define DEBUG_PRINT(x)
+ //#define DEBUG_PRINTDEC(x)
+ #define DEBUG_PRINTLN(x)
+#endif
+
+
 //TO DO: State machine all the things:
 //PROTOCOL:
 #define CMD_START '1'
@@ -13,6 +26,10 @@ HX711 scale(2, 3);		// parameter "gain" is ommited; the default value 128 is use
 double toGram = 5.68;	//hardware dependent calibration factor, TBD.
 
 void setup() {
+  #ifdef DEBUG
+		while(!Serial);
+  		Serial.begin(19200);
+  #endif
   Serial1.begin(19200); //for the BLE module, custom baud rate, see: https://github.com/RedBearLab/Biscuit/wiki/BLEMini_BiscuitCompile#characteristics
   scale.set_scale(2280.f);    // this value is obtained by calibrating the scale with known weights; see the README for details
   scale.tare();			      // reset the scale to 0
@@ -27,33 +44,40 @@ enum states{
   AWAKE
 };
 
-states state=SLEEPING; //create instance of state enum.
+states state=TO_SLEEP; //create instance of state enum.
 
 void loop() {
 double weight=0; //contains measured weight. Is reset at each loop.
 
 delay(200); //for each loop cycle
 
+DEBUG_PRINT("State: ");
+
 switch(state)
 	{
 	case TO_SLEEP:
+		DEBUG_PRINT("TO_SLEEP");
 		scale.power_down();			        // put the ADC in sleep mode
 		state=SLEEPING;
 	case SLEEPING:
+		DEBUG_PRINT("SLEEPING");
 		//PUT ARDUINO IN SLEEP MODE WITH WDT AND UART INTERUPT ACTIVE ??? - could conserve power.
 		while(Serial1.available()<1); //wait for incoming data
 		if(Serial1.read()==CMD_START) state=AWAKEN;
 		break;
 	case AWAKEN:
+		DEBUG_PRINT("AWAKEN");
 		//WAKE UP ARDUINO IF PUT TO SLEEP.
 		scale.power_up();
 		state=TARE;
 		break;
 	case TARE:
+		DEBUG_PRINT("TARE");
 		scale.tare();
 		state=AWAKE;
 		break;
 	case AWAKE:
+		DEBUG_PRINT("AWAKE");
 		if (Serial1.available()>0) //anything from BLE module?
 			{
 			char rx=Serial1.read();
