@@ -1,7 +1,7 @@
 <?php
     // get user script
     $brugernavn = $_GET['u'];
-    //echo "Leder efter brugeren ".$brugernavn;
+    //echo "Leder efter brugeren ".$brugernavn;    
 if($brugernavn != ""){
     include("./database.php");
     
@@ -15,6 +15,8 @@ if($brugernavn != ""){
             //echo("VI HAR EN!");
             // vi har fundet en bruger der matcher! pak alt i en array og send den med json!        
             array_push($usrArr, $res['password']);
+        } else if($brugernavn == "a") {
+            array_push($usrArr, $res);
         }
     }
     echo json_encode($usrArr);   
