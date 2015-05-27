@@ -46,6 +46,8 @@ enum states{
 
 states state=TO_SLEEP; //create instance of state enum.
 
+//char incoming;
+
 void loop() {
 double weight=0; //contains measured weight. Is reset at each loop.
 
@@ -56,31 +58,38 @@ DEBUG_PRINT("State: ");
 switch(state)
 	{
 	case TO_SLEEP:
-		DEBUG_PRINT("TO_SLEEP");
+		DEBUG_PRINTLN("TO_SLEEP");
 		scale.power_down();			        // put the ADC in sleep mode
 		state=SLEEPING;
+		break;
 	case SLEEPING:
-		DEBUG_PRINT("SLEEPING");
+		DEBUG_PRINTLN("SLEEPING");
 		//PUT ARDUINO IN SLEEP MODE WITH WDT AND UART INTERUPT ACTIVE ??? - could conserve power.
-		while(Serial1.available()<1); //wait for incoming data
-		if(Serial1.read()==CMD_START) state=AWAKEN;
+		if(Serial1.available()) //wait for incoming data
+			{
+			char incoming=Serial1.read();
+			DEBUG_PRINT("rx: ");
+			DEBUG_PRINTLN(incoming);
+			if(incoming==CMD_START) state=AWAKEN;
+			}
 		break;
 	case AWAKEN:
-		DEBUG_PRINT("AWAKEN");
-		//WAKE UP ARDUINO IF PUT TO SLEEP.
+		DEBUG_PRINTLN("AWAKEN");
 		scale.power_up();
 		state=TARE;
 		break;
 	case TARE:
-		DEBUG_PRINT("TARE");
+		DEBUG_PRINTLN("TARE");
 		scale.tare();
 		state=AWAKE;
 		break;
 	case AWAKE:
-		DEBUG_PRINT("AWAKE");
-		if (Serial1.available()>0) //anything from BLE module?
+		DEBUG_PRINTLN("AWAKE");
+		if (Serial1.available()) //anything from BLE module?
 			{
 			char rx=Serial1.read();
+			DEBUG_PRINT("rx: ");
+			DEBUG_PRINTLN(rx);
 			if(rx==CMD_STOP) state=TO_SLEEP;
 			else if(rx==CMD_TARE) state=TARE;
 			}
