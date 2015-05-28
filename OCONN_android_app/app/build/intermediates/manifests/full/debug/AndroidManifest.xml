@@ -40,6 +40,10 @@
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
 
+    <android:uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/o"
@@ -90,6 +94,14 @@
         <activity
             android:name="dk.http418.oconn.ScanWeight"
             android:label="@string/title_activity_scan_weight" >
+        </activity>
+        <activity
+            android:name="dk.http418.oconn.NotAllowed"
+            android:label="@string/title_activity_not_allowed" >
+        </activity>
+        <activity
+            android:name="dk.http418.oconn.NoWeightFound"
+            android:label="@string/title_activity_no_weight_found" >
         </activity>
     </application>
 

@@ -53,6 +53,7 @@ public class VeggieWeight extends Activity {
     private AlertDialog.Builder owd;
 
     private int amountPacked = 0;
+    private boolean isConnected = false;
 
     private Intent intent;
 
@@ -69,8 +70,12 @@ public class VeggieWeight extends Activity {
             }
 
             // forbind
-            mBluetoothLeService.connect(mDevAdr);
-            System.out.println("DBG OUT: Connecting to BLE on adr: "+mDevAdr);
+            if(mBluetoothLeService.connect(mDevAdr)) {
+                //sendToDevice(mBluetoothLeService.getSupportedGattService().getCharacteristic(RBLService.UUID_BLE_SHIELD_TX), "1");
+                isConnected = true;
+                System.out.println("CONNECTED MOFO!");
+            }
+
         }
 
         @Override
@@ -85,11 +90,18 @@ public class VeggieWeight extends Activity {
             final String action = intent.getAction();
 
             if (RBLService.ACTION_GATT_DISCONNECTED.equals(action)) {
+                //sendToDevice(mBluetoothLeService.getSupportedGattService().getCharacteristic(RBLService.UUID_BLE_SHIELD_TX), "0");
             } else if (RBLService.ACTION_GATT_SERVICES_DISCOVERED
                     .equals(action)) {
                 getGattService(mBluetoothLeService.getSupportedGattService());
+
+                //if(isConnected)
+                    //sendToDevice(mBluetoothLeService.getSupportedGattService().getCharacteristic(RBLService.UUID_BLE_SHIELD_TX), "1");
+
             } else if (RBLService.ACTION_DATA_AVAILABLE.equals(action)) {
                 displayData(intent.getByteArrayExtra(RBLService.EXTRA_DATA));
+            } else if (RBLService.ACTION_GATT_CONNECTED.equals(action)) {
+               // sendToDevice(mBluetoothLeService.getSupportedGattService().getCharacteristic(RBLService.UUID_BLE_SHIELD_TX), "1");
             }
         }
     };
@@ -169,12 +181,32 @@ public class VeggieWeight extends Activity {
         Intent gattServiceIntent = new Intent(this, RBLService.class);
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
 
+
         // hookup til knappen
         confBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 System.out.println("JEG HAR NOK MAYN!");
+
+                // sluk vægten!
+                BluetoothGattCharacteristic characteristic = map
+                        .get(RBLService.UUID_BLE_SHIELD_TX);
+
+                String offSign = "0";
+                byte b = 0x00;
+                byte[] tmp = offSign.getBytes();
+                byte[] tx = new byte[tmp.length + 1];
+                tx[0] = b;
+                for (int i = 1; i < tmp.length; i++) {
+                    tx[i] = tmp[i - 1];
+                }
+
+                if(characteristic != null) {
+                    characteristic.setValue(tx);
+                    mBluetoothLeService.writeCharacteristic(characteristic);
+                }
+                // unbind vores service
                 unbindService(mServiceConnection);
 
                 Intent data = new Intent();
@@ -190,6 +222,10 @@ public class VeggieWeight extends Activity {
 
             }
         });
+
+        //System.out.println("ADR: "+mDevAdr);
+        // send tænd signal til vægten
+        //sendToDevice("1");
 
     }
 
@@ -297,6 +333,32 @@ public class VeggieWeight extends Activity {
         mBluetoothLeService.setCharacteristicNotification(characteristicRx,
                 true);
         mBluetoothLeService.readCharacteristic(characteristicRx);
+    }
+
+    private void sendToDevice(BluetoothGattCharacteristic characteristic, String out){
+
+
+        // send tænd signal til vægten
+         //characteristic = mBluetoothLeService.getSupportedGattService()
+           //     .getCharacteristic(RBLService.UUID_BLE_SHIELD_TX);
+
+        System.out.println(map.toString());
+        characteristic = map.get(0);
+
+
+        String onStr = out;
+        byte b = 0x00;
+        byte[] tmp = onStr.getBytes();
+        byte[] tx = new byte[tmp.length + 1];
+        tx[0] = b;
+        for (int i = 1; i < tmp.length + 1; i++) {
+            tx[i] = tmp[i - 1];
+        }
+
+        characteristic.setValue(tx);
+        System.out.println("WRITING! "+tx);
+        mBluetoothLeService.writeCharacteristic(characteristic);
+
     }
 
     private static IntentFilter makeGattUpdateIntentFilter() {

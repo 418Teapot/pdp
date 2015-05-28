@@ -434,8 +434,8 @@ containing a value of this type.
         public static final int users=0x7f02002d;
     }
     public static final class id {
-        public static final int QRCamera=0x7f0b001c;
-        public static final int action_settings=0x7f0b0032;
+        public static final int QRCamera=0x7f0b0022;
+        public static final int action_settings=0x7f0b0039;
         public static final int adjust_height=0x7f0b0002;
         public static final int adjust_width=0x7f0b0003;
         public static final int book_now=0x7f0b0011;
@@ -443,48 +443,55 @@ containing a value of this type.
         public static final int buyButton=0x7f0b000d;
         public static final int buy_now=0x7f0b0012;
         public static final int buy_with_google=0x7f0b0013;
-        public static final int checkout_knap=0x7f0b0029;
+        public static final int checkout_knap=0x7f0b0030;
         public static final int classic=0x7f0b0015;
-        public static final int confirmWeightBtn=0x7f0b0022;
-        public static final int currWeight=0x7f0b001f;
-        public static final int deviceAddr=0x7f0b0025;
-        public static final int deviceName=0x7f0b0024;
+        public static final int confirmWeightBtn=0x7f0b0028;
+        public static final int currWeight=0x7f0b0025;
+        public static final int deviceAddr=0x7f0b002b;
+        public static final int deviceName=0x7f0b002a;
         public static final int donate_with_google=0x7f0b0014;
-        public static final int gatheredText=0x7f0b002e;
-        public static final int gatheredTextData=0x7f0b002f;
+        public static final int gatheredText=0x7f0b0035;
+        public static final int gatheredTextData=0x7f0b0036;
         public static final int grayscale=0x7f0b0016;
         public static final int holo_dark=0x7f0b0008;
         public static final int holo_light=0x7f0b0009;
         public static final int hybrid=0x7f0b0004;
-        public static final int listView=0x7f0b0023;
+        public static final int listView=0x7f0b0029;
         public static final int login_knap=0x7f0b001b;
-        public static final int logout=0x7f0b0033;
+        public static final int logout=0x7f0b003a;
         public static final int match_parent=0x7f0b000f;
-        public static final int middletext=0x7f0b002c;
-        public static final int middletextdata=0x7f0b002d;
+        public static final int middletext=0x7f0b0033;
+        public static final int middletextdata=0x7f0b0034;
         public static final int monochrome=0x7f0b0017;
+        public static final int noW_retry_closeBtn=0x7f0b001e;
+        public static final int noWtxt=0x7f0b001c;
+        public static final int noWtxt2=0x7f0b001d;
         public static final int none=0x7f0b0000;
         public static final int normal=0x7f0b0005;
-        public static final int pageloading=0x7f0b0026;
+        public static final int not_allowed_closeBtn=0x7f0b0021;
+        public static final int pageloading=0x7f0b002c;
         public static final int password=0x7f0b001a;
         public static final int production=0x7f0b000a;
+        public static final int progressBar=0x7f0b002e;
         public static final int sandbox=0x7f0b000b;
         public static final int satellite=0x7f0b0006;
         public static final int selectionDetails=0x7f0b000e;
         public static final int slide=0x7f0b0001;
-        public static final int status_image=0x7f0b0031;
+        public static final int status_image=0x7f0b0038;
         public static final int strict_sandbox=0x7f0b000c;
         public static final int terrain=0x7f0b0007;
-        public static final int toptext=0x7f0b002a;
-        public static final int toptextdata=0x7f0b002b;
-        public static final int totalWeight=0x7f0b0020;
-        public static final int tv=0x7f0b0027;
+        public static final int textView=0x7f0b001f;
+        public static final int textView2=0x7f0b0020;
+        public static final int toptext=0x7f0b0031;
+        public static final int toptextdata=0x7f0b0032;
+        public static final int totalWeight=0x7f0b0026;
+        public static final int tv=0x7f0b002d;
         public static final int usersView=0x7f0b0018;
-        public static final int veggieList=0x7f0b0028;
-        public static final int veggieName=0x7f0b001d;
-        public static final int veggieW_img=0x7f0b001e;
-        public static final int veggie_image=0x7f0b0030;
-        public static final int weightProgress=0x7f0b0021;
+        public static final int veggieList=0x7f0b002f;
+        public static final int veggieName=0x7f0b0023;
+        public static final int veggieW_img=0x7f0b0024;
+        public static final int veggie_image=0x7f0b0037;
+        public static final int weightProgress=0x7f0b0027;
         public static final int wrap_content=0x7f0b0010;
     }
     public static final class integer {
@@ -492,20 +499,24 @@ containing a value of this type.
     }
     public static final class layout {
         public static final int activity_login=0x7f030000;
-        public static final int activity_scan_weight=0x7f030001;
-        public static final int activity_veggie_weight=0x7f030002;
-        public static final int device_list=0x7f030003;
-        public static final int list_item=0x7f030004;
-        public static final int loading_process_dialog_anim=0x7f030005;
-        public static final int main=0x7f030006;
-        public static final int second=0x7f030007;
-        public static final int veggie_list=0x7f030008;
+        public static final int activity_no_weight_found=0x7f030001;
+        public static final int activity_not_allowed=0x7f030002;
+        public static final int activity_scan_weight=0x7f030003;
+        public static final int activity_veggie_weight=0x7f030004;
+        public static final int device_list=0x7f030005;
+        public static final int list_item=0x7f030006;
+        public static final int loading_process_dialog_anim=0x7f030007;
+        public static final int main=0x7f030008;
+        public static final int second=0x7f030009;
+        public static final int veggie_list=0x7f03000a;
     }
     public static final class menu {
         public static final int bletest=0x7f0a0000;
         public static final int menu=0x7f0a0001;
-        public static final int menu_selveggie=0x7f0a0002;
-        public static final int menu_veggie_weight=0x7f0a0003;
+        public static final int menu_no_weight_found=0x7f0a0002;
+        public static final int menu_not_allowed=0x7f0a0003;
+        public static final int menu_selveggie=0x7f0a0004;
+        public static final int menu_veggie_weight=0x7f0a0005;
     }
     public static final class raw {
         public static final int gtm_analytics=0x7f040000;
@@ -570,8 +581,10 @@ containing a value of this type.
         public static final int store_picture_message=0x7f050039;
         public static final int store_picture_title=0x7f05003a;
         public static final int title_activity_login=0x7f05003b;
-        public static final int title_activity_scan_weight=0x7f05003c;
-        public static final int title_activity_veggie_weight=0x7f05003d;
+        public static final int title_activity_no_weight_found=0x7f05003c;
+        public static final int title_activity_not_allowed=0x7f05003d;
+        public static final int title_activity_scan_weight=0x7f05003e;
+        public static final int title_activity_veggie_weight=0x7f05003f;
         public static final int wallet_buy_button_place_holder=0x7f05001f;
     }
     public static final class style {

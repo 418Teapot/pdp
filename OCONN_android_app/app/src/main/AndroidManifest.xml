@@ -27,16 +27,21 @@
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <android:uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
     <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
-
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
+    <android:uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
 
     <application
@@ -89,6 +94,14 @@
         <activity
             android:name=".ScanWeight"
             android:label="@string/title_activity_scan_weight" >
+        </activity>
+        <activity
+            android:name=".NotAllowed"
+            android:label="@string/title_activity_not_allowed" >
+        </activity>
+        <activity
+            android:name=".NoWeightFound"
+            android:label="@string/title_activity_no_weight_found" >
         </activity>
     </application>
 

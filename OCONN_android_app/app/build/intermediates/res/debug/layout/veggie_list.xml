@@ -104,4 +104,4 @@
         android:layout_gravity="end"
         android:src="@drawable/checkmark"
         />
-</RelativeLayout><!-- From: file:/home/zeb/dev/itpdpweb/pdp/Android_ble_test/app/src/main/res/layout/veggie_list.xml -->
+</RelativeLayout><!-- From: file:/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/src/main/res/layout/veggie_list.xml -->

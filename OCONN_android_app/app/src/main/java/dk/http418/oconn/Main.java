@@ -41,6 +41,8 @@ public class Main extends Activity {
 
 	private String scannedDevName = null;
 
+	private boolean canProceed = false;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -57,6 +59,24 @@ public class Main extends Activity {
 					.show();
 			finish();
 		}
+
+		// kan brugeren få lov til at hente en pose?
+		new GetPickup(){
+
+			@Override
+			protected void onPostExecute(Boolean canWe) {
+				//System.out.println("Return bool: "+canWe);
+				canProceed = canWe;
+				System.out.println("Can we proceed?: "+canProceed);
+				if(!canWe){
+					Intent notAllowed = new Intent(getApplicationContext(), NotAllowed.class);
+					notAllowed.putExtra("loggedUser", getIntent().getExtras().getString("loggedUser"));
+					startActivity(notAllowed);
+					finish();
+				}
+			}
+
+		}.execute(getIntent().getStringExtra("loggedUser"));
 
 		final BluetoothManager mBluetoothManager = (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
 		mBluetoothAdapter = mBluetoothManager.getAdapter();
@@ -105,19 +125,19 @@ public class Main extends Activity {
 
 		scanLeDevice();
 
-		showRoundProcessDialog(Main.this, R.layout.loading_process_dialog_anim);
+		//showRoundProcessDialog(Main.this, R.layout.loading_process_dialog_anim);
 
-		Timer mTimer = new Timer();
-		mTimer.schedule(new TimerTask() {
+		//Timer mTimer = new Timer();
+		/* mTimer.schedule(new TimerTask() {
 
 			@Override
 			public void run() {
 				Intent deviceListIntent = new Intent(getApplicationContext(),
 						dk.http418.oconn.Device.class);
 				startActivity(deviceListIntent);
-				mDialog.dismiss();
+				//mDialog.dismiss();
 			}
-		}, SCAN_PERIOD);
+		}, SCAN_PERIOD); */
 
 		instance = this;
 	}
@@ -137,7 +157,7 @@ public class Main extends Activity {
 
 		mDialog = new AlertDialog.Builder(mContext).create();
 		mDialog.setOnKeyListener(keyListener);
-		mDialog.show();
+//		mDialog.show();
 		// 娉ㄦ��姝ゅ��瑕���惧��show涔���� ������浼���ュ��甯�
 		mDialog.setContentView(layout);
 	}
@@ -166,22 +186,30 @@ public class Main extends Activity {
 		public void onLeScan(final BluetoothDevice device, final int rssi,
 				byte[] scanRecord) {
 			runOnUiThread(new Runnable() {
+
 				@Override
 				public void run() {
-					if (device != null && device.getName().equals(scannedDevName)) {
-						if (mDevices.indexOf(device) == -1)
-							mDevices.add(device);
+					System.out.println("RUNNIN'!");
+					if (scannedDevName != null) {
+						if (device != null && scannedDevName.equalsIgnoreCase(device.getName()) && canProceed) {
+							if (mDevices.indexOf(device) == -1)
+								mDevices.add(device);
 
-						// vi fandt vores device!
-						System.out.println("YOYO!");
+							// vi fandt vores device!
+							System.out.println("YOYO!");
 
-						Intent selVelInt = new Intent(getApplicationContext(), SelectVeggie.class);
-						selVelInt.putExtra("EXTRA_DEVICE_ADDRESS", device.getAddress());
-						selVelInt.putExtra("EXTRA_DEVICE_NAME", device.getName());
+							Intent selVelInt = new Intent(getApplicationContext(), SelectVeggie.class);
+							selVelInt.putExtra("EXTRA_DEVICE_ADDRESS", device.getAddress());
+							selVelInt.putExtra("EXTRA_DEVICE_NAME", device.getName());
 
-						startActivity(selVelInt);
-						Main.instance.finish();
-						finish();
+							startActivity(selVelInt);
+							Main.instance.finish();
+							finish();
+						} else if (device == null || mDevices.size() <= 0) {
+							Intent noDev = new Intent(getApplicationContext(), NoWeightFound.class);
+							startActivity(noDev);
+							finish();
+						}
 					}
 				}
 			});
@@ -203,6 +231,6 @@ public class Main extends Activity {
 	protected void onDestroy() {
 		super.onDestroy();
 
-		System.exit(0);
+		//System.exit(0);
 	}
 }

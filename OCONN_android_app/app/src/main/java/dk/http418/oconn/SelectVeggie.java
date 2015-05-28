@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 
+import android.bluetooth.BluetoothGattCharacteristic;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -28,7 +29,6 @@ public class SelectVeggie extends Activity {
 	private ListView lv = null;
 	private String mDeviceName;
 	private String mDeviceAddress;
-
 
 	private VeggieAdapter v_adapter;
 	private ArrayList<Veggie> vegetables;
@@ -149,7 +149,7 @@ public class SelectVeggie extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		if (item.getItemId() == android.R.id.home) {
 
-			System.exit(0);
+			//System.exit(0);
 		}
 
 		if(item.getItemId() == R.id.logout) {

@@ -155,9 +155,10 @@ public class ScanWeight extends Activity {
                         System.out.println("HELL YEAH!");
                         barcodeScanned = true;
 
-
+                        String usern = getIntent().getStringExtra("loggedUser");
                         Intent intent = new Intent(getApplicationContext(), Main.class);
                         intent.putExtra("devName", res.substring(6, res.length()));
+                        intent.putExtra("loggedUser", usern);
                         startActivity(intent);
                         finish();
 

@@ -32,12 +32,13 @@ public class LoginActivity extends Activity {
         // check om der er sat et login!
         SharedPreferences settings = getApplicationContext().getSharedPreferences(PREFS_NAME, 0);
         loggedOn = settings.getBoolean(LOGON_STR, false);
-
+        String usrN = settings.getString("userLoggedIn", "none");
         System.out.println("Loggedon? "+loggedOn);
 
         if(loggedOn){
             System.out.println("Vi er allerede logget på!");
             Intent intent = new Intent(getApplicationContext(), ScanWeight.class);
+            intent.putExtra("loggedUser", usrN);
             startActivity(intent);
             finish();
         }
@@ -55,7 +56,7 @@ public class LoginActivity extends Activity {
 
                 // når vi klikker - hent usr og pw!
                 if (usr != null && pw != null) {
-                    String usrname = usr.getText().toString();
+                    final String usrname = usr.getText().toString();
                     String passw = pw.getText().toString();
 
                     // salt og digest vores string
@@ -71,9 +72,11 @@ public class LoginActivity extends Activity {
                                 SharedPreferences settings = getApplicationContext().getSharedPreferences(PREFS_NAME, 0);
                                 SharedPreferences.Editor edit = settings.edit();
                                 edit.putBoolean(LOGON_STR, true);
+                                edit.putString("userLoggedIn", usrname);
                                 edit.commit();
                                 System.out.println("LOGGED IN!");
                                 Intent intent = new Intent(getApplicationContext(), ScanWeight.class);
+                                intent.putExtra("loggedUser", usrname);
                                 startActivity(intent);
                                 finish();
 
