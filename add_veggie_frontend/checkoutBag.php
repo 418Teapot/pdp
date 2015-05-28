@@ -29,7 +29,8 @@ if($brugernavn != ""){
         }
     }    
         $updatedWeeks = substr($weekStr, 0, -2);    
-        $r = mysqli_query($db, "UPDATE users SET bookedWeeks='".$updatedWeeks."' WHERE username='".$brugernavn."'") or die("Kunne ikke opdatere uger");
+        //$r = mysqli_query($db, "UPDATE users SET bookedWeeks='".$updatedWeeks."' WHERE username='".$brugernavn."'") or die("Kunne ikke opdatere uger");
+    $r = 1;
     $superVal = false;
     if($r == "1" || $r == 1){
         $superVal = true;

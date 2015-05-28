@@ -74,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CheckoutActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CheckoutActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/dk/http418/oconn/CheckoutActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="55" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.2214533">
+              <caret line="49" column="10" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
               <folding>
                 <element signature="e#511#807#0" expanded="true" />
                 <element signature="e#806#807#0" expanded="true" />
@@ -134,11 +134,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GetCheckout.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GetCheckout.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/dk/http418/oconn/GetCheckout.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53287196">
-              <caret line="19" column="101" selection-start-line="19" selection-start-column="101" selection-end-line="19" selection-end-column="101" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="73" selection-start-line="19" selection-start-column="73" selection-end-line="19" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1689,11 +1689,11 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_no_weight_found.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/dk/http418/oconn/NoWeightFound.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_checkout.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/dk/http418/oconn/CheckoutActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/dk/http418/oconn/Main.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/dk/http418/oconn/VeggieWeight.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/dk/http418/oconn/SelectVeggie.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/dk/http418/oconn/GetCheckout.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dk/http418/oconn/CheckoutActivity.java" />
       </list>
     </option>
   </component>
@@ -1812,7 +1812,7 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="4477c4cb" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="04dad54960cb45e7" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_21_x86" />
     <property name="FullScreen" value="false" />
     <property name="OverrideImplement.combined" value="true" />
@@ -2042,7 +2042,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928178" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32928178" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32928178" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2236,8 +2236,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="15" selection-start-line="21" selection-start-column="12" selection-end-line="27" selection-end-column="15" />
           <folding>
-            <element signature="e#623#824#0" expanded="true" />
-            <element signature="e#823#824#0" expanded="true" />
+            <element signature="e#809#810#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2247,8 +2246,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="30" column="9" selection-start-line="21" selection-start-column="7" selection-end-line="30" selection-end-column="9" />
           <folding>
-            <element signature="e#641#943#0" expanded="true" />
-            <element signature="e#942#943#0" expanded="true" />
+            <element signature="e#942#943#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2356,19 +2354,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/dk/http418/oconn/CheckoutActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="55" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
-          <folding>
-            <element signature="e#511#807#0" expanded="true" />
-            <element signature="e#806#807#0" expanded="true" />
-            <element signature="e#992#1193#0" expanded="true" />
-            <element signature="e#1192#1193#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/dk/http418/oconn/LoginActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2379,10 +2364,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/dk/http418/oconn/GetCheckout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53287196">
-          <caret line="19" column="101" selection-start-line="19" selection-start-column="101" selection-end-line="19" selection-end-column="101" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="73" selection-start-line="19" selection-start-column="73" selection-end-line="19" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dk/http418/oconn/CheckoutActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2214533">
+          <caret line="49" column="10" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
+          <folding>
+            <element signature="e#511#807#0" expanded="true" />
+            <element signature="e#806#807#0" expanded="true" />
+            <element signature="e#992#1193#0" expanded="true" />
+            <element signature="e#1192#1193#0" expanded="true" />
           </folding>
         </state>
       </provider>
