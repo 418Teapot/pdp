@@ -1,6 +1,6 @@
 #include "HX711.h"
 
-#define DEBUG
+//#define DEBUG
 
 #ifdef DEBUG
  #define DEBUG_PRINT(x)     Serial.print (x)
@@ -44,7 +44,7 @@ enum states{
   AWAKE
 };
 
-states state=TO_SLEEP; //create instance of state enum.
+states state=AWAKE; //create instance of state enum.
 
 //char incoming;
 
