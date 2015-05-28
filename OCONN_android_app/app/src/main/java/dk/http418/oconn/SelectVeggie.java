@@ -35,6 +35,10 @@ public class SelectVeggie extends Activity {
 
 	private Context ctx;
 
+	private int compensWeight;
+
+	private String username = "";
+
 	private void getVeggies() {
 		new GetVeggies(){
 			@Override
@@ -52,6 +56,12 @@ public class SelectVeggie extends Activity {
 					public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
 						Veggie selVeggie = (Veggie) lv.getItemAtPosition(i);
+						compensWeight = 0;
+						for(Veggie v : vegetables){
+							if(v.isPacked()){
+								compensWeight += v.getCollected();
+							}
+						}
 
 						if(selVeggie.isPacked())
 						Toast.makeText(getApplicationContext(),
@@ -60,10 +70,13 @@ public class SelectVeggie extends Activity {
 						Intent veggieIntent = new Intent(ctx, VeggieWeight.class);
 						//veggieIntent.putExtras()
 						veggieIntent.putExtra("Name", selVeggie.getName());
+						veggieIntent.putExtra("loggedUser", username);
 						veggieIntent.putExtra("Amt", selVeggie.getAmount());
+						veggieIntent.putExtra("compensate", compensWeight);
 						//veggieIntent.putExtra("veggie", selVeggie);
 						veggieIntent.putExtra("btName", mDeviceName);
 						veggieIntent.putExtra("btAdr", mDeviceAddress);
+						veggieIntent.putExtra("compensate", compensWeight);
 						startActivityForResult(veggieIntent, 1);
 
 					}
@@ -97,7 +110,7 @@ public class SelectVeggie extends Activity {
 				v.setStatusImg(getResources().getDrawable(R.drawable.checkmark));
 				System.out.println("Vi har opdateret " + data.getStringExtra("veg_name") + " med " + data.getIntExtra("packedAmt", 0) + " g");
 				v_adapter.notifyDataSetChanged();
-
+				username = data.getStringExtra("loggedUser");
 			}
 		}
 	}
@@ -114,17 +127,24 @@ public class SelectVeggie extends Activity {
 
 		mDeviceAddress = intent.getStringExtra(Device.EXTRA_DEVICE_ADDRESS);
 		mDeviceName = intent.getStringExtra(Device.EXTRA_DEVICE_NAME);
+		compensWeight = intent.getIntExtra("compensate", 0);
+		System.out.println("Compensate er: "+compensWeight);
 
 		getActionBar().setTitle("Vægt "+mDeviceName+" - Vælg Grøntsag");
 
 		getActionBar().setDisplayHomeAsUpEnabled(false);
+
+		username = intent.getStringExtra("loggedUser");
 
 		Button chkout_btn = (Button) findViewById(R.id.checkout_knap);
 		if(chkout_btn != null){
 			chkout_btn.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View view) {
-						
+					Intent checkoutActivity = new Intent(getApplicationContext(), CheckoutActivity.class);
+					checkoutActivity.putExtra("loggedUser", username);
+					startActivity(checkoutActivity);
+					finish();
 				}
 			});
 		}

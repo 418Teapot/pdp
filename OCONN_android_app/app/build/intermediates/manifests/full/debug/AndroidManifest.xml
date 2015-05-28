@@ -103,6 +103,10 @@
             android:name="dk.http418.oconn.NoWeightFound"
             android:label="@string/title_activity_no_weight_found" >
         </activity>
+        <activity
+            android:name="dk.http418.oconn.CheckoutActivity"
+            android:label="@string/title_activity_checkout" >
+        </activity>
     </application>
 
 </manifest>

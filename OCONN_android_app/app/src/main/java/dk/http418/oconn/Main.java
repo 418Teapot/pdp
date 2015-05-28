@@ -188,7 +188,7 @@ public class Main extends Activity {
 						Intent selVelInt = new Intent(getApplicationContext(), SelectVeggie.class);
 						selVelInt.putExtra("EXTRA_DEVICE_ADDRESS", device.getAddress());
 						selVelInt.putExtra("EXTRA_DEVICE_NAME", device.getName());
-
+						selVelInt.putExtra("loggedUser", getIntent().getExtras().getString("loggedUser"));
 						startActivity(selVelInt);
 						Main.instance.finish();
 						finish();

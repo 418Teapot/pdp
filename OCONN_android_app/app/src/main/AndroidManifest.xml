@@ -103,6 +103,10 @@
             android:name=".NoWeightFound"
             android:label="@string/title_activity_no_weight_found" >
         </activity>
+        <activity
+            android:name=".CheckoutActivity"
+            android:label="@string/title_activity_checkout" >
+        </activity>
     </application>
 
 </manifest>

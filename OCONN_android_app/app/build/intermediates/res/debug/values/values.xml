@@ -127,6 +127,9 @@ available. Please contact the developer for assistance.</string>
     <eat-comment/>
     <string name="store_picture_message">"Allow Ad to store image in Picture gallery?"</string>
     <string name="store_picture_title">Save image</string>
+    <!-- From: file:/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="title_activity_checkout">CheckoutActivity</string>
     <!-- From: file:/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/src/main/res/values/strings_activity_login.xml -->
     <eat-comment/>
     <string name="title_activity_login">Log på ØCONN</string>

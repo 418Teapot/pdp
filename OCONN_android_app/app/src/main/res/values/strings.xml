@@ -16,6 +16,7 @@
     <string name="title_activity_scan_weight">Skan Vægt</string>
     <string name="title_activity_not_allowed">NotAllowed</string>
     <string name="title_activity_no_weight_found">NoWeightFound</string>
+    <string name="title_activity_checkout">CheckoutActivity</string>
 
 
 </resources>

@@ -380,3 +380,9 @@ ADDED from AndroidManifest.xml:102:9
 		ADDED from AndroidManifest.xml:104:13
 	android:name
 		ADDED from AndroidManifest.xml:103:13
+activity#dk.http418.oconn.CheckoutActivity
+ADDED from AndroidManifest.xml:106:9
+	android:label
+		ADDED from AndroidManifest.xml:108:13
+	android:name
+		ADDED from AndroidManifest.xml:107:13

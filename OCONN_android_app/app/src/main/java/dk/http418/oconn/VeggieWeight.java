@@ -55,7 +55,11 @@ public class VeggieWeight extends Activity {
     private int amountPacked = 0;
     private boolean isConnected = false;
 
+    private int compensWeight = 0;
+
     private Intent intent;
+
+    private String username = "";
 
     private final ServiceConnection mServiceConnection = new ServiceConnection(){
         @Override
@@ -117,7 +121,8 @@ public class VeggieWeight extends Activity {
 
         //blueTooth
         mDevAdr = intent.getStringExtra("btAdr");
-
+        compensWeight = intent.getIntExtra("compensate", 0);
+        username = intent.getStringExtra("loggedUser");
 
         owd = new AlertDialog.Builder(this)
                     .setTitle("For meget vægt!")
@@ -126,6 +131,8 @@ public class VeggieWeight extends Activity {
 
 
         overWeight = false;
+
+
 
         confBtn = (Button) findViewById(R.id.confirmWeightBtn);
 
@@ -213,6 +220,8 @@ public class VeggieWeight extends Activity {
 
                 data.putExtra("veg_name", veggie_name);
                 data.putExtra("packedAmt", amountPacked);
+                data.putExtra("compensate", amountPacked);
+                data.putExtra("loggedUser", username);
                 if(getParent()== null){
                     setResult(Activity.RESULT_OK, data);
                 } else {
@@ -284,15 +293,17 @@ public class VeggieWeight extends Activity {
         //System.out.println("DISPLAYING DATA!");
         // vis vægten på skærmen
 
+        //System.out.println("Compensating with "+compensWeight);
+
         if (byteArray != null) {
             String data = new String(byteArray);
             Scanner in = new Scanner(data).useDelimiter("[^0-9]+");
             int parsed = in.nextInt();
 
             if(currAmt != null){
-                currAmt.setText("" + parsed);
+                currAmt.setText("" + (parsed-compensWeight));
 
-                int prog = (int) Math.round(parsed * 100.0/allowedAmt);
+                int prog = (int) Math.round((parsed-compensWeight) * 100.0/allowedAmt);
 
                 if(pb != null) {
                     pb.setProgress(prog);
@@ -300,7 +311,7 @@ public class VeggieWeight extends Activity {
 
                 if(prog < 100) {
                     pb.getProgressDrawable().setColorFilter(Color.GREEN, PorterDuff.Mode.MULTIPLY);
-                    amountPacked = parsed;
+                    amountPacked = parsed-compensWeight;
                     //overWeight = false;
                     if(confBtn != null && !confBtn.isEnabled()){
                         confBtn.setText("Jeg har nok!");
