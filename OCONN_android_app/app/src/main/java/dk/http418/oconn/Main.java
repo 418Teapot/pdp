@@ -176,6 +176,28 @@ public class Main extends Activity {
 				}
 
 				mBluetoothAdapter.stopLeScan(mLeScanCallback);
+				if (mDevices.size() <= 0) {
+					Intent noDev = new Intent(getApplicationContext(), NoWeightFound.class);
+					startActivity(noDev);
+					finish();
+				} else if(mDevices.size() > 0 && canProceed){
+					// vi fandt vores device!
+					System.out.println("Checkin!");
+					BluetoothDevice device = mDevices.get(0);
+					if(device != null && scannedDevName.equalsIgnoreCase(device.getName())) {
+						Intent selVelInt = new Intent(getApplicationContext(), SelectVeggie.class);
+						selVelInt.putExtra("EXTRA_DEVICE_ADDRESS", device.getAddress());
+						selVelInt.putExtra("EXTRA_DEVICE_NAME", device.getName());
+
+						startActivity(selVelInt);
+						Main.instance.finish();
+						finish();
+					} else {
+						Intent noDev = new Intent(getApplicationContext(), NoWeightFound.class);
+						startActivity(noDev);
+						finish();
+					}
+				}
 			}
 		}.start();
 	}
@@ -184,31 +206,17 @@ public class Main extends Activity {
 
 		@Override
 		public void onLeScan(final BluetoothDevice device, final int rssi,
-				byte[] scanRecord) {
+				final byte[] scanRecord) {
 			runOnUiThread(new Runnable() {
 
 				@Override
 				public void run() {
-					System.out.println("RUNNIN'!");
+					//System.out.println("RUNNIN'! "+scanRecord.toString());
 					if (scannedDevName != null) {
-						if (device != null && scannedDevName.equalsIgnoreCase(device.getName()) && canProceed) {
+						if (device != null && scannedDevName.equalsIgnoreCase(device.getName())) {
 							if (mDevices.indexOf(device) == -1)
 								mDevices.add(device);
 
-							// vi fandt vores device!
-							System.out.println("YOYO!");
-
-							Intent selVelInt = new Intent(getApplicationContext(), SelectVeggie.class);
-							selVelInt.putExtra("EXTRA_DEVICE_ADDRESS", device.getAddress());
-							selVelInt.putExtra("EXTRA_DEVICE_NAME", device.getName());
-
-							startActivity(selVelInt);
-							Main.instance.finish();
-							finish();
-						} else if (device == null || mDevices.size() <= 0) {
-							Intent noDev = new Intent(getApplicationContext(), NoWeightFound.class);
-							startActivity(noDev);
-							finish();
 						}
 					}
 				}

@@ -36,28 +36,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/dk/http418/oconn/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.7454543">
-              <caret line="210" column="37" selection-start-line="210" selection-start-column="37" selection-end-line="210" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.7456979">
+              <caret line="197" column="33" selection-start-line="197" selection-start-column="33" selection-end-line="197" selection-end-column="33" />
               <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1243#1260#0" expanded="true" />
                 <element signature="e#1935#2391#0" expanded="true" />
                 <element signature="e#2390#2391#0" expanded="true" />
-                <element signature="e#5073#6126#0" expanded="true" />
-                <element signature="e#5237#6117#0" expanded="true" />
-                <element signature="e#6116#6117#0" expanded="true" />
-                <element signature="e#6125#6126#0" expanded="true" />
+                <element signature="e#4722#5843#0" expanded="true" />
+                <element signature="e#5842#5843#0" expanded="true" />
+                <element signature="e#5916#6428#0" expanded="true" />
+                <element signature="e#6086#6419#0" expanded="true" />
+                <element signature="e#6418#6419#0" expanded="true" />
+                <element signature="e#6427#6428#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NoWeightFound.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NoWeightFound.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/dk/http418/oconn/NoWeightFound.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37370244">
-              <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding>
                 <element signature="e#641#943#0" expanded="true" />
                 <element signature="e#942#943#0" expanded="true" />
@@ -1692,8 +1696,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/dk/http418/oconn/GetPickup.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/dk/http418/oconn/LoginActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_no_weight_found.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/dk/http418/oconn/Main.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/dk/http418/oconn/NoWeightFound.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dk/http418/oconn/Main.java" />
       </list>
     </option>
   </component>
@@ -1812,7 +1816,7 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="04dad54960cb45e7" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="4477c4cb" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_21_x86" />
     <property name="FullScreen" value="false" />
     <property name="OverrideImplement.combined" value="true" />
@@ -2082,12 +2086,16 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="178" column="56" selection-start-line="178" selection-start-column="56" selection-end-line="178" selection-end-column="56" />
           <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1243#1260#0" expanded="true" />
             <element signature="e#1935#2391#0" expanded="true" />
             <element signature="e#2390#2391#0" expanded="true" />
-            <element signature="e#5073#6126#0" expanded="true" />
-            <element signature="e#5237#6117#0" expanded="true" />
-            <element signature="e#6116#6117#0" expanded="true" />
-            <element signature="e#6125#6126#0" expanded="true" />
+            <element signature="e#4722#5843#0" expanded="true" />
+            <element signature="e#5842#5843#0" expanded="true" />
+            <element signature="e#5916#6428#0" expanded="true" />
+            <element signature="e#6086#6419#0" expanded="true" />
+            <element signature="e#6418#6419#0" expanded="true" />
+            <element signature="e#6427#6428#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2134,12 +2142,16 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="178" column="56" selection-start-line="178" selection-start-column="56" selection-end-line="178" selection-end-column="56" />
           <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1243#1260#0" expanded="true" />
             <element signature="e#1935#2391#0" expanded="true" />
             <element signature="e#2390#2391#0" expanded="true" />
-            <element signature="e#5073#6126#0" expanded="true" />
-            <element signature="e#5237#6117#0" expanded="true" />
-            <element signature="e#6116#6117#0" expanded="true" />
-            <element signature="e#6125#6126#0" expanded="true" />
+            <element signature="e#4722#5843#0" expanded="true" />
+            <element signature="e#5842#5843#0" expanded="true" />
+            <element signature="e#5916#6428#0" expanded="true" />
+            <element signature="e#6086#6419#0" expanded="true" />
+            <element signature="e#6418#6419#0" expanded="true" />
+            <element signature="e#6427#6428#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2293,28 +2305,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/dk/http418/oconn/Main.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dk/http418/oconn/NoWeightFound.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.7454543">
-          <caret line="210" column="37" selection-start-line="210" selection-start-column="37" selection-end-line="210" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
-            <element signature="e#1935#2391#0" expanded="true" />
-            <element signature="e#2390#2391#0" expanded="true" />
-            <element signature="e#5073#6126#0" expanded="true" />
-            <element signature="e#5237#6117#0" expanded="true" />
-            <element signature="e#6116#6117#0" expanded="true" />
-            <element signature="e#6125#6126#0" expanded="true" />
+            <element signature="e#641#943#0" expanded="true" />
+            <element signature="e#942#943#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/dk/http418/oconn/NoWeightFound.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dk/http418/oconn/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37370244">
-          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.7456979">
+          <caret line="197" column="33" selection-start-line="197" selection-start-column="33" selection-end-line="197" selection-end-column="33" />
           <folding>
-            <element signature="e#641#943#0" expanded="true" />
-            <element signature="e#942#943#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1243#1260#0" expanded="true" />
+            <element signature="e#1935#2391#0" expanded="true" />
+            <element signature="e#2390#2391#0" expanded="true" />
+            <element signature="e#4722#5843#0" expanded="true" />
+            <element signature="e#5842#5843#0" expanded="true" />
+            <element signature="e#5916#6428#0" expanded="true" />
+            <element signature="e#6086#6419#0" expanded="true" />
+            <element signature="e#6418#6419#0" expanded="true" />
+            <element signature="e#6427#6428#0" expanded="true" />
           </folding>
         </state>
       </provider>
