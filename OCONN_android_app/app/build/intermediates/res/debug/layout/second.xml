@@ -14,4 +14,4 @@
         android:text="@string/checkout"
         android:id="@+id/checkout_knap" />
 
-</LinearLayout><!-- From: file:/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/src/main/res/layout/second.xml -->
+</LinearLayout><!-- From: file:/home/zeb/Development/pdp/OCONN_android_app/app/src/main/res/layout/second.xml -->

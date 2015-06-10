@@ -2,172 +2,172 @@
 <items version="2" >
 
     <item
-        jar="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.3.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="f2f7ec211ce4d244ee97a57523eeb4526dc3cf8a">
-        <dex dex="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-b979b98600e1b283fbcdb84a82fe3285c626e945.jar" />
-    </item>
-    <item
-        jar="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.3.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="5ea948d825957be6c4358c48422bee60eef2d487">
-        <dex dex="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-875a22a82ef41ba70e482557dac7d4794c4a63c2.jar" />
-    </item>
-    <item
-        jar="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.3.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="e35fae1b377c23aa5fd2d309a190c2d0f73d54ec">
-        <dex dex="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-7748bc68ff50a5eb9abac9579255233385b1ce87.jar" />
-    </item>
-    <item
-        jar="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.3.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="4f4fe3c23776540625f3c2844152a7510fddf9f1">
-        <dex dex="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-2b253b29fef8dc172942e2959377858b6f2ed3f2.jar" />
-    </item>
-    <item
-        jar="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
-        <dex dex="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-b27d2865cdf7606eab1a90f95f409b17b6585bb0.jar" />
-    </item>
-    <item
-        jar="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.3.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="7215ac1f2fca947b9415a6ee2a1bf991364aab24">
-        <dex dex="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-f9c065666c5a3bf0e5a4aaaec78077698cfa5019.jar" />
-    </item>
-    <item
-        jar="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.3.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="b48d5c51a9a9e329005106b4667f54948de4d4d8">
-        <dex dex="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-aca7aba28d92b5b92b1ce9adf3b3d5717c6ced66.jar" />
-    </item>
-    <item
-        jar="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.3.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="b2c07cdb814fe988ad05f7b4d767a841514a5991">
-        <dex dex="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-1ac39146a21d90afff8cd3f6514ff872be99edb7.jar" />
-    </item>
-    <item
-        jar="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.3.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="9c9dea9e85aceb09d95df5e6f7bc8a43fc286068">
-        <dex dex="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-aee4c3ef84ba9b4295d64ef5ed5f4061a1a65212.jar" />
-    </item>
-    <item
-        jar="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/libs/zbar.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="0a7b88ba1496a0b4af76069ad40dacd3897149e0">
-        <dex dex="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/zbar-46aabf1fd1388b22400a8a764be64d53ceedb460.jar" />
-    </item>
-    <item
-        jar="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.3.0/jars/classes.jar"
+        jar="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.3.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="a0ce76dfaccbfbd6c551ed2174280aaabe60fe47">
-        <dex dex="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-10d34b2ed734e614009b8a8d14c6c4909c0e944f.jar" />
+        <dex dex="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-8f819a98c9c0faae68845fce5f8f617bdf2c08ea.jar" />
     </item>
     <item
-        jar="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.3.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="565a01f90f1529f73362707c4c185d0623a68782">
-        <dex dex="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-e009b0d1da735fd1f5b773755a255e13e1796a32.jar" />
-    </item>
-    <item
-        jar="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/7.3.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="3b4ff5c39dace8f3b4ab4cab8191785547a0815f">
-        <dex dex="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-6de59d8045c3b0566079d6472a63c77f5765fd96.jar" />
-    </item>
-    <item
-        jar="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.3.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="fe3e0c6de7cceed888b277487238b6af9a1cc299">
-        <dex dex="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-b9bc9c142f8d26062c99f036415baf2dd8c71e97.jar" />
-    </item>
-    <item
-        jar="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.3.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="e5b9f5b0aa8dee788beb63d23832cb29ce771343">
-        <dex dex="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-b897948b74780e248c4674c09562a4406cb2b14d.jar" />
-    </item>
-    <item
-        jar="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.3.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="e5bf453b070c1e39297986144960e45afa0fdfad">
-        <dex dex="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-ebc39d3bc0871c577769a99402d4038ed28be9af.jar" />
-    </item>
-    <item
-        jar="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.3.0/jars/classes.jar"
+        jar="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.3.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="3988694bf9d8186ff97ad5cdfa4ed88b5010fe08">
-        <dex dex="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-f3486c91d02b465986a0a52e97685bd921d6bb83.jar" />
+        <dex dex="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-b3d5b24a98a362b6543c17bcac2a5f0963789c38.jar" />
     </item>
     <item
-        jar="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/jars/libs/internal_impl-22.1.1.jar"
+        jar="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.3.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
-        <dex dex="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/internal_impl-22.1.1-1da99c306d24805e4ff401f4612cc6c59d0dfe4f.jar" />
+        sha1="7215ac1f2fca947b9415a6ee2a1bf991364aab24">
+        <dex dex="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-4780ae9b0e32700826d0a11fa9bcf8aa9681fc27.jar" />
     </item>
     <item
-        jar="/home/zeb/bin/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/22.1.1/support-annotations-22.1.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
-        <dex dex="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/support-annotations-22.1.1-cd7c731e8cd1c8e341506157f57ff877356a2265.jar" />
-    </item>
-    <item
-        jar="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.3.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="0708ef60917bf94913fe9ef972a655b99462dca7">
-        <dex dex="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-fe310b4b588634f8b2c78336555baffc8ba08236.jar" />
-    </item>
-    <item
-        jar="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.3.0/jars/classes.jar"
+        jar="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.3.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="59652857a825fff0de62166fca1bc9553cc01abb">
-        <dex dex="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-33da622d5b53d647ade518074d85167aa92c005a.jar" />
+        <dex dex="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-780a3b68e47a15bc1116b96d959108f640179d07.jar" />
     </item>
     <item
-        jar="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/7.3.0/jars/classes.jar"
+        jar="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/7.3.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="bb36004beb02b69562cbec9aa7d6a3cf16bf5d1b">
-        <dex dex="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-4e20840cc8aca844cb0008438b8a50553a06a965.jar" />
+        <dex dex="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-2582b6d24fe27a897a2f628505a066d991e4d2f0.jar" />
     </item>
     <item
-        jar="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.3.0/jars/classes.jar"
+        jar="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e5bf453b070c1e39297986144960e45afa0fdfad">
+        <dex dex="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-b52ec70624e968376ce2cee0da77b492e30975e7.jar" />
+    </item>
+    <item
+        jar="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="3b4ff5c39dace8f3b4ab4cab8191785547a0815f">
+        <dex dex="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-aaae4b464afb40d1704a5876b64c2c9ace0cab23.jar" />
+    </item>
+    <item
+        jar="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="0708ef60917bf94913fe9ef972a655b99462dca7">
+        <dex dex="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-0ac91487ac2936affda2665a9b503d1bdfe49ab6.jar" />
+    </item>
+    <item
+        jar="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.3.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="0180d031a7b54dabb93b4af3869468b55dc938bd">
-        <dex dex="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-d2641698c02f542fb274034b896187d7fe174a7f.jar" />
+        <dex dex="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-1f0dcd888447372194423ffd8578b29671baaa1e.jar" />
     </item>
     <item
-        jar="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.3.0/jars/classes.jar"
+        jar="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b2c07cdb814fe988ad05f7b4d767a841514a5991">
+        <dex dex="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-2daa1bf73295ae248256ab93c29af1bf246b75ce.jar" />
+    </item>
+    <item
+        jar="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
+        <dex dex="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-f0ab7d632542fe4f19aac3eb89928d1c6a5b29d2.jar" />
+    </item>
+    <item
+        jar="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="565a01f90f1529f73362707c4c185d0623a68782">
+        <dex dex="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-508b97375d140b5ea42cc0ce082daa73ca4f7479.jar" />
+    </item>
+    <item
+        jar="/home/zeb/Development/pdp/OCONN_android_app/app/libs/zbar.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="0a7b88ba1496a0b4af76069ad40dacd3897149e0">
+        <dex dex="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/zbar-8fbdae8e1b7c33c7123bbd18149c33878b91c7e9.jar" />
+    </item>
+    <item
+        jar="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e5b9f5b0aa8dee788beb63d23832cb29ce771343">
+        <dex dex="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-e0d482b023af1d23f559dfacd857728b5236f5b6.jar" />
+    </item>
+    <item
+        jar="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b48d5c51a9a9e329005106b4667f54948de4d4d8">
+        <dex dex="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-d92f270580a5d8325e63447b7b3a3084d2b92e23.jar" />
+    </item>
+    <item
+        jar="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.3.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="6046e5cdaf799120b7c56a5a061d80e8854c4d34">
-        <dex dex="/home/zeb/dev/itpdpweb/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-ea8a598a57c455f4a7fc69e5fb014b7f68816c0b.jar" />
+        <dex dex="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-8419add2ebde0ee952cc4c8f76ca4b95d9bf57be.jar" />
+    </item>
+    <item
+        jar="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="fe3e0c6de7cceed888b277487238b6af9a1cc299">
+        <dex dex="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-8cbc8be974e8ef342d01179f8fe9baefa75c6382.jar" />
+    </item>
+    <item
+        jar="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e35fae1b377c23aa5fd2d309a190c2d0f73d54ec">
+        <dex dex="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-6dc31f7c01f06701b374723cc36558ebbd674adf.jar" />
+    </item>
+    <item
+        jar="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="5ea948d825957be6c4358c48422bee60eef2d487">
+        <dex dex="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-8da8624bf7a21fc15c0efe7ab9b45bd3c3304460.jar" />
+    </item>
+    <item
+        jar="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="9c9dea9e85aceb09d95df5e6f7bc8a43fc286068">
+        <dex dex="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-1cc88c1b1c4578779e417c800904578b5aadc4d8.jar" />
+    </item>
+    <item
+        jar="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4f4fe3c23776540625f3c2844152a7510fddf9f1">
+        <dex dex="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-fd8171b609caf6bdc2bb8bbdc22aa033adcf1e5e.jar" />
+    </item>
+    <item
+        jar="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f2f7ec211ce4d244ee97a57523eeb4526dc3cf8a">
+        <dex dex="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/classes-e00a80e9bc8e3fb23ab5f00c29d10ec48c5da548.jar" />
+    </item>
+    <item
+        jar="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/jars/libs/internal_impl-22.1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
+        <dex dex="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/internal_impl-22.1.1-3b2c31d4ab5a5b41ef0fcd178ff0fb902748aeef.jar" />
+    </item>
+    <item
+        jar="/home/zeb/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.1.1/support-annotations-22.1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
+        <dex dex="/home/zeb/Development/pdp/OCONN_android_app/app/build/intermediates/pre-dexed/debug/support-annotations-22.1.1-6264105a3125f195bcf5cd4081e8a501b06d00b5.jar" />
     </item>
 
 </items>

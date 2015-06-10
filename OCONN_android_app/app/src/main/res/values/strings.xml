@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">ØCONN</string>
+    <string name="app_name">GreenScale</string>
     <string name="action_settings">Indstillinger</string>
     <string name="searching">Søger...</string>
     <string name="connectdev">Forbinder til vægt</string>
