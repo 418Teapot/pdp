@@ -90,8 +90,20 @@ public class SelectVeggie extends Activity {
 						v.setImg(getResources().getDrawable(R.drawable.cheese));
 					} else if(v.getName().equals("Kaffe")){
 						v.setImg(getResources().getDrawable(R.drawable.kaffe));
-				 	} else if(v.getName().equals("Peberfrugt")){
+				 	} else if(v.getName().equals("Peberfrugt")) {
 						v.setImg(getResources().getDrawable(R.drawable.peberfrugt));
+					} else if(v.getName().equals("Jordskokker")) {
+						v.setImg(getResources().getDrawable(R.drawable.artichoke));
+					} else if(v.getName().equals("1 stk Salathoved")) {
+						v.setImg(getResources().getDrawable(R.drawable.salat));
+					} else if(v.getName().equals("Kartofler")) {
+						v.setImg(getResources().getDrawable(R.drawable.kartofler));
+					} else if(v.getName().equals("1 bundt Rabarber")) {
+						v.setImg(getResources().getDrawable(R.drawable.rabarber));
+					} else if(v.getName().equals("2 poser Brændenælde")) {
+						v.setImg(getResources().getDrawable(R.drawable.naelder));
+					} else if(v.getName().equals("1 Peberrod")) {
+						v.setImg(getResources().getDrawable(R.drawable.peberrod));
 					} else {
 						v.setImg(getResources().getDrawable(R.drawable.test));
 					}

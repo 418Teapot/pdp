@@ -1,8 +1,11 @@
 package dk.http418.oconn;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.Menu;
@@ -63,29 +66,37 @@ public class LoginActivity extends Activity {
                     String salt = digestString("abcdef");
                     final String passMD5 = digestString(salt + passw + salt);
 
-                    // check med serveren
-                    new GetLogin() {
+                    if(isNetworkAvailable()) {
+                        // check med serveren
+                        new GetLogin() {
 
-                        @Override
-                        public void onPostExecute(String s) {
-                            if (s.equals(passMD5)) {
-                                SharedPreferences settings = getApplicationContext().getSharedPreferences(PREFS_NAME, 0);
-                                SharedPreferences.Editor edit = settings.edit();
-                                edit.putBoolean(LOGON_STR, true);
-                                edit.putString("userLoggedIn", usrname);
-                                edit.commit();
-                                System.out.println("LOGGED IN!");
-                                Intent intent = new Intent(getApplicationContext(), ScanWeight.class);
-                                intent.putExtra("loggedUser", usrname);
-                                startActivity(intent);
-                                finish();
+                            @Override
+                            public void onPostExecute(String s) {
+                                if (s.equals(passMD5)) {
+                                    SharedPreferences settings = getApplicationContext().getSharedPreferences(PREFS_NAME, 0);
+                                    SharedPreferences.Editor edit = settings.edit();
+                                    edit.putBoolean(LOGON_STR, true);
+                                    edit.putString("userLoggedIn", usrname);
+                                    edit.commit();
+                                    System.out.println("LOGGED IN!");
+                                    Intent intent = new Intent(getApplicationContext(), ScanWeight.class);
+                                    intent.putExtra("loggedUser", usrname);
+                                    startActivity(intent);
+                                    finish();
 
-                            } else {
-                                System.out.println("ACCESS DENIED MOTHERFUCKER!");
+                                } else {
+                                    System.out.println("ACCESS DENIED MOTHERFUCKER!");
+                                }
                             }
-                        }
 
-                    }.execute(usrname);
+                        }.execute(usrname);
+                    } else {
+                        System.out.println("NO NETWORK!");
+                        Intent noNet = new Intent(getApplicationContext(), NoInternets.class);
+                        startActivity(noNet);
+                        finish();
+
+                    }
 
                 }
 
@@ -140,5 +151,13 @@ public class LoginActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connMan
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = connMan.getActiveNetworkInfo();
+        return netInfo != null && netInfo.isConnected();
     }
 }

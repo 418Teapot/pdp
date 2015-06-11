@@ -19,6 +19,8 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnKeyListener;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.view.KeyEvent;
@@ -60,24 +62,32 @@ public class Main extends Activity {
 			finish();
 		}
 
-		// kan brugeren få lov til at hente en pose?
-		new GetPickup(){
+		if(isNetworkAvailable()) {
 
-			@Override
-			protected void onPostExecute(Boolean canWe) {
-				//System.out.println("Return bool: "+canWe);
-				canProceed = canWe;
-				System.out.println("Can we proceed?: "+canProceed);
-				if(!canWe){
-					Intent notAllowed = new Intent(getApplicationContext(), NotAllowed.class);
-					notAllowed.putExtra("loggedUser", getIntent().getExtras().getString("loggedUser"));
-					startActivity(notAllowed);
-					finish();
+			// kan brugeren få lov til at hente en pose?
+			new GetPickup() {
+
+				@Override
+				protected void onPostExecute(Boolean canWe) {
+					//System.out.println("Return bool: "+canWe);
+					canProceed = canWe;
+					System.out.println("Can we proceed?: " + canProceed);
+					if (!canWe) {
+						Intent notAllowed = new Intent(getApplicationContext(), NotAllowed.class);
+						notAllowed.putExtra("loggedUser", getIntent().getExtras().getString("loggedUser"));
+						startActivity(notAllowed);
+						finish();
+					}
 				}
-			}
 
-		}.execute(getIntent().getStringExtra("loggedUser"));
+			}.execute(getIntent().getStringExtra("loggedUser"));
+		} else {
+			System.out.println("NO NETWORK!");
+			Intent noNet = new Intent(getApplicationContext(), NoInternets.class);
+			startActivity(noNet);
+			finish();
 
+		}
 		final BluetoothManager mBluetoothManager = (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
 		mBluetoothAdapter = mBluetoothManager.getAdapter();
 		if (mBluetoothAdapter == null) {
@@ -87,7 +97,7 @@ public class Main extends Activity {
 			return;
 		}
 
-		if (!mBluetoothAdapter.isEnabled()) {
+		if (!mBluetoothAdapter.isEnabled() && isNetworkAvailable()) {
 			Intent enableBtIntent = new Intent(
 					BluetoothAdapter.ACTION_REQUEST_ENABLE);
 			startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
@@ -241,4 +251,12 @@ public class Main extends Activity {
 
 		//System.exit(0);
 	}
+
+	private boolean isNetworkAvailable() {
+		ConnectivityManager connMan
+				= (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo netInfo = connMan.getActiveNetworkInfo();
+		return netInfo != null && netInfo.isConnected();
+	}
+
 }

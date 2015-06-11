@@ -17,6 +17,8 @@
     <string name="title_activity_not_allowed">NotAllowed</string>
     <string name="title_activity_no_weight_found">NoWeightFound</string>
     <string name="title_activity_checkout">CheckoutActivity</string>
+    <string name="title_activity_donate">Donate</string>
+    <string name="title_activity_no_internets">NoInternets</string>
 
 
 </resources>

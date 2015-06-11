@@ -22,6 +22,8 @@ public class GetPickup extends AsyncTask<String, Void, Boolean> {
             phsh = fromServer.get(0).toString();
         } catch (JSONException e){
             e.printStackTrace();
+        } catch (NullPointerException e){
+            System.out.println("Get Pickup er NULL!");
         }
 
 

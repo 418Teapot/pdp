@@ -130,11 +130,13 @@ available. Please contact the developer for assistance.</string>
     <!-- From: file:/home/zeb/Development/pdp/OCONN_android_app/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="title_activity_checkout">CheckoutActivity</string>
+    <string name="title_activity_donate">Donate</string>
     <!-- From: file:/home/zeb/Development/pdp/OCONN_android_app/app/src/main/res/values/strings_activity_login.xml -->
     <eat-comment/>
     <string name="title_activity_login">Log på ØCONN</string>
     <!-- From: file:/home/zeb/Development/pdp/OCONN_android_app/app/src/main/res/values/strings.xml -->
     <eat-comment/>
+    <string name="title_activity_no_internets">NoInternets</string>
     <string name="title_activity_no_weight_found">NoWeightFound</string>
     <string name="title_activity_not_allowed">NotAllowed</string>
     <string name="title_activity_scan_weight">Skan Vægt</string>

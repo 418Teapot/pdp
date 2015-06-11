@@ -176,7 +176,21 @@ public class VeggieWeight extends Activity {
                 imgView.setImageDrawable(getResources().getDrawable(R.drawable.cheese));
             } else if (veggie_name.equals("Kaffe")) {
                 imgView.setImageDrawable(getResources().getDrawable(R.drawable.kaffe));
-            } else {
+            } else if (veggie_name.equals("Jordskokker")) {
+                imgView.setImageDrawable(getResources().getDrawable(R.drawable.artichoke));
+            } else if (veggie_name.equals("1 stk Salathoved")) {
+                imgView.setImageDrawable(getResources().getDrawable(R.drawable.salat));
+            } else if (veggie_name.equals("Kartofler")) {
+                imgView.setImageDrawable(getResources().getDrawable(R.drawable.kartofler));
+            } else if (veggie_name.equals("1 bundt Rabarber")) {
+                imgView.setImageDrawable(getResources().getDrawable(R.drawable.rabarber));
+            } else if (veggie_name.equals("2 poser Brændenælde")) {
+                imgView.setImageDrawable(getResources().getDrawable(R.drawable.naelder));
+            } else if (veggie_name.equals("1 Peberrod")) {
+                imgView.setImageDrawable(getResources().getDrawable(R.drawable.peberrod));
+            } else if (veggie_name.equals("Peberfrugt")) {
+                imgView.setImageDrawable(getResources().getDrawable(R.drawable.peberfrugt));
+            }  else {
                 imgView.setImageDrawable(getResources().getDrawable(R.drawable.test));
             }
         }
