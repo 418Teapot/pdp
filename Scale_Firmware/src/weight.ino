@@ -34,13 +34,15 @@ void setup() {
 		while(!Serial);
   		Serial.begin(19200);
   #endif
-  Serial1.begin(19200); //for the BLE module, custom baud rate, see: https://github.com/RedBearLab/Biscuit/wiki/BLEMini_BiscuitCompile#characteristics
-  scale.set_scale(2280.f);    // this value is obtained by calibrating the scale with known weights; see the README for details
-  scale.tare();			      // reset the scale to 0
 
   pinMode(greenLed,OUTPUT);
   pinMode(redLed,OUTPUT);
   pinMode(battPin,INPUT);
+  vBattCheck(); //do an initial battery check, to light up the leds immediately
+
+  Serial1.begin(19200); //for the BLE module, custom baud rate, see: https://github.com/RedBearLab/Biscuit/wiki/BLEMini_BiscuitCompile#characteristics
+  scale.set_scale(2280.f);    // this value is obtained by calibrating the scale with known weights; see the README for details
+  scale.tare();			      // reset the scale to 0
 
 }
 
@@ -62,7 +64,9 @@ unsigned int vBatt=1023;
 void loop() {
 double weight=0; //contains measured weight. Is reset at each loop.
 
-//delay(200); //for each loop cycle
+vBattCheck();
+
+delay(200); //for each loop cycle
 
 DEBUG_PRINT("State: ");
 
@@ -116,14 +120,11 @@ switch(state)
 		Serial1.write(TempString[2]);
 		Serial1.write(TempString[3]);
 
-		delay(200); //for each loop cycle
-
 		break;
 	default:
 		break;
 	}
 
-	vBattCheck();
 
 }
 
