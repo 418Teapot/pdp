@@ -31,12 +31,18 @@ public class Veggie {
 
     private int collected = 0;
 
+    private boolean hasExtra;
+    private int extraAmt;
+
+
     public Veggie(String date, String name, int amount) {
         this.date = date;
         this.name = name;
         this.amount = amount;
         this.veggieImg = veggieImg;
         this.isPacked = false;
+        this.hasExtra = false;
+        this.extraAmt = 0;
     }
 
     public void setImg(Drawable drawable){
@@ -74,4 +80,16 @@ public class Veggie {
     public void setCollected(int collected) {
         this.collected = collected;
     }
+
+    public boolean hasExtra() {return hasExtra; }
+    public void setHasExtra(boolean extra) { hasExtra = extra; }
+
+    public int getExtraAmount(){
+        return extraAmt;
+    }
+
+    public void setExtraAmt(int eamt){
+        extraAmt = eamt;
+    }
+
 }

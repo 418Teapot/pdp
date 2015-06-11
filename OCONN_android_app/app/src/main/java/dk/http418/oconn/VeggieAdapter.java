@@ -1,6 +1,9 @@
 package dk.http418.oconn;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,11 +41,19 @@ public class VeggieAdapter extends ArrayAdapter<Veggie> {
             TextView mtd = (TextView) v.findViewById(R.id.middletextdata);
             ImageView iv = (ImageView) v.findViewById(R.id.veggie_image);
 
-
             TextView gt = (TextView) v.findViewById(R.id.gatheredText);
             TextView gtd = (TextView) v.findViewById(R.id.gatheredTextData);
 
             ImageView simg = (ImageView) v.findViewById(R.id.status_image);
+
+            ImageView eImg = (ImageView) v.findViewById(R.id.extra_image);
+
+            if(eImg != null){
+                if(!i.hasExtra()){
+                    eImg.setImageDrawable(new ColorDrawable(Color.TRANSPARENT));
+                }
+            }
+
 
             if(simg != null){
                 simg.setImageDrawable(i.getStatusImg());
@@ -72,6 +83,7 @@ public class VeggieAdapter extends ArrayAdapter<Veggie> {
             if(iv != null){
                 iv.setImageDrawable(i.getImgID());
             }
+
         }
 
         return v;

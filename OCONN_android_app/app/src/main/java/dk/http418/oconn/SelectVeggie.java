@@ -37,6 +37,8 @@ public class SelectVeggie extends Activity {
 
 	private int compensWeight;
 
+	private boolean didDonate;
+
 	private String username = "";
 
 	private void getVeggies() {
@@ -61,6 +63,7 @@ public class SelectVeggie extends Activity {
 							if(v.isPacked()){
 								compensWeight += v.getCollected();
 							}
+
 						}
 
 						if(selVeggie.isPacked())
@@ -73,6 +76,7 @@ public class SelectVeggie extends Activity {
 						veggieIntent.putExtra("loggedUser", username);
 						veggieIntent.putExtra("Amt", selVeggie.getAmount());
 						veggieIntent.putExtra("compensate", compensWeight);
+                        veggieIntent.putExtra("extraVeggies", selVeggie.getExtraAmount());
 						//veggieIntent.putExtra("veggie", selVeggie);
 						veggieIntent.putExtra("btName", mDeviceName);
 						veggieIntent.putExtra("btAdr", mDeviceAddress);
@@ -107,6 +111,13 @@ public class SelectVeggie extends Activity {
 					} else {
 						v.setImg(getResources().getDrawable(R.drawable.test));
 					}
+
+                    if(v.hasExtra()){
+                        System.out.println("Veggie: " + v.getName() + " has " + v.getExtraAmount() + "g extra");
+                    } else {
+                        System.out.println(v.getName()+" har "+v.getExtraAmount()+" extra!");
+                    }
+
 				}
 			}
 
@@ -117,6 +128,11 @@ public class SelectVeggie extends Activity {
 	protected void onActivityResult(int reqCode, int resCode, Intent data){
 		for(Veggie v : vegetables){
 			if(v.getName().equals(data.getStringExtra("veg_name"))){
+
+				didDonate = data.getBooleanExtra("hasExtra", false);
+				if(didDonate)
+					System.out.println("Donated! YAAAY!");
+
 				v.setWasPacked(true);
 				v.setCollected(data.getIntExtra("packedAmt", 0));
 				v.setStatusImg(getResources().getDrawable(R.drawable.checkmark));

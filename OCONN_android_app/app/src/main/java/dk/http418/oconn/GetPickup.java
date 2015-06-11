@@ -23,7 +23,7 @@ public class GetPickup extends AsyncTask<String, Void, Boolean> {
         } catch (JSONException e){
             e.printStackTrace();
         } catch (NullPointerException e){
-            System.out.println("Get Pickup er NULL!");
+            System.out.println("Get Pickup er NULLd!");
         }
 
 

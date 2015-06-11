@@ -26,6 +26,10 @@ public class GetVeggies extends AsyncTask<String, Void, ArrayList<Veggie>>{
                     String date = tmpArr.getString("date");
 
                     Veggie v = new Veggie(date, name, amt);
+                    if(tmpArr.getInt("hasExtra") > 0){
+                        v.setHasExtra(true);
+                        v.setExtraAmt(tmpArr.getInt("hasExtra"));
+                    }
                     veggies.add(v);
                 } catch (JSONException e){
                     e.printStackTrace();

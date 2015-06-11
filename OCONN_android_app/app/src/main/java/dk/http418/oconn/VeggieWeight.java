@@ -1,5 +1,6 @@
 package dk.http418.oconn;
 
+import android.app.ActionBar;
 import android.app.Activity;
 
 import android.app.AlertDialog;
@@ -13,6 +14,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.graphics.Color;
+import android.graphics.LinearGradient;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -20,9 +22,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.HashMap;
@@ -48,6 +53,8 @@ public class VeggieWeight extends Activity {
 
     private Button confBtn;
 
+    private Context context = this;
+
     private boolean overWeight;
 
     private AlertDialog.Builder owd;
@@ -60,6 +67,8 @@ public class VeggieWeight extends Activity {
     private Intent intent;
 
     private String username = "";
+
+    private boolean gotExtra = false;
 
     private final ServiceConnection mServiceConnection = new ServiceConnection(){
         @Override
@@ -139,13 +148,14 @@ public class VeggieWeight extends Activity {
         // display
         //Veggie veg = (Veggie) intent.getSerializableExtra("veggie");
         final String veggie_name = intent.getStringExtra("Name");
-        int veggie_amt = intent.getIntExtra("Amt", 0);
+        final int veggie_amt = intent.getIntExtra("Amt", 0);
+
+        final int extraVeggies = intent.getIntExtra("extraVeggies", 0);
 
         getActionBar().setTitle("Afvej "+veggie_name);
         getActionBar().setDisplayHomeAsUpEnabled(false);
 
-        TextView nameView = (TextView) findViewById(R.id.veggieName);
-        TextView amtView = (TextView) findViewById(R.id.totalWeight);
+
 
         currAmt = (TextView) findViewById(R.id.currWeight);
         if(currAmt != null){
@@ -155,6 +165,9 @@ public class VeggieWeight extends Activity {
             finish();
         }
         pb = (ProgressBar) findViewById(R.id.weightProgress);
+
+        TextView nameView = (TextView) findViewById(R.id.veggieName);
+        TextView amtView = (TextView) findViewById(R.id.totalWeight);
 
         if(nameView != null){
             nameView.setText(veggie_name);
@@ -195,6 +208,8 @@ public class VeggieWeight extends Activity {
             }
         }
 
+
+
         // greenify
         pb.getProgressDrawable().setColorFilter(Color.GREEN, PorterDuff.Mode.MULTIPLY);
 
@@ -202,46 +217,51 @@ public class VeggieWeight extends Activity {
         Intent gattServiceIntent = new Intent(this, RBLService.class);
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
 
+        if(extraVeggies > 50){
+            RelativeLayout layout = (RelativeLayout) findViewById(R.id.veggieWeightLayout);
+            final Button iWantExtras = new Button(this);
+            iWantExtras.setText("Jeg vil gerne ha' lidt ekstra");
+            //iWantExtras.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT));
+
+            RelativeLayout.LayoutParams p = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            p.addRule(RelativeLayout.BELOW, R.id.confirmWeightBtn);
+            p.addRule(RelativeLayout.CENTER_IN_PARENT);
+            iWantExtras.setLayoutParams(p);
+
+            layout.addView(iWantExtras);
+
+            // click
+            iWantExtras.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    gotExtra = true;
+                    RelativeLayout layout = (RelativeLayout) findViewById(R.id.veggieWeightLayout);
+                    layout.removeView(view);
+
+                    TextView nameView = (TextView) findViewById(R.id.veggieName);
+                    TextView amtView = (TextView) findViewById(R.id.totalWeight);
+
+                    if(nameView != null){
+                        nameView.setText(veggie_name);
+                    }
+
+                    if(amtView != null){
+                        amtView.setText("/" + (veggie_amt+extraVeggies) + "g.");
+                    }
+
+                    allowedAmt = (veggie_amt+extraVeggies);
+
+                }
+            });
+
+        }
 
         // hookup til knappen
         confBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                System.out.println("JEG HAR NOK MAYN!");
-
-                // sluk vægten!
-                BluetoothGattCharacteristic characteristic = map
-                        .get(RBLService.UUID_BLE_SHIELD_TX);
-
-                String offSign = "0";
-                byte b = 0x00;
-                byte[] tmp = offSign.getBytes();
-                byte[] tx = new byte[tmp.length + 1];
-                tx[0] = b;
-                for (int i = 1; i < tmp.length; i++) {
-                    tx[i] = tmp[i - 1];
-                }
-
-                if(characteristic != null) {
-                    characteristic.setValue(tx);
-                    mBluetoothLeService.writeCharacteristic(characteristic);
-                }
-                // unbind vores service
-                unbindService(mServiceConnection);
-
-                Intent data = new Intent();
-
-                data.putExtra("veg_name", veggie_name);
-                data.putExtra("packedAmt", amountPacked);
-                data.putExtra("compensate", amountPacked);
-                data.putExtra("loggedUser", username);
-                if(getParent()== null){
-                    setResult(Activity.RESULT_OK, data);
-                } else {
-                    getParent().setResult(Activity.RESULT_OK, data);
-                }
-                finish();
+                packit(veggie_name, false, gotExtra);
 
             }
         });
@@ -250,6 +270,132 @@ public class VeggieWeight extends Activity {
         // send tænd signal til vægten
         //sendToDevice("1");
 
+    }
+
+    private void packit(String nm, boolean resetExtra, boolean gotExtraStuff){
+        int threshold = new Double(allowedAmt*0.98).intValue();
+
+        final String veggie_name = nm;
+
+        if(gotExtra){
+            new SetExtra(){
+
+                @Override
+                protected void onPostExecute(Boolean success) {
+                    //System.out.println("Return bool: "+canWe);
+
+                    if(success){
+                        System.out.println("Extra was added!");
+                    }
+                }
+
+            }.execute(veggie_name, ""+(allowedAmt-amountPacked), "reset");
+        }
+
+        if(amountPacked < threshold && !gotExtra){
+            // vi donerer lige nu!
+
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context  );
+
+            // set title
+            alertDialogBuilder.setTitle("Er du sikker på at du har nok?" +
+                    "");
+
+            // set dialog message
+            alertDialogBuilder
+                    .setMessage("Du må gerne ta' lidt mere - men du kan også donere dit overskud til fællesskabet :)")
+                    .setCancelable(false)
+                    .setPositiveButton("Donér",new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog,int id) {
+                            new SetExtra(){
+
+                                @Override
+                                protected void onPostExecute(Boolean success) {
+                                    //System.out.println("Return bool: "+canWe);
+
+                                    if(success){
+                                        System.out.println("Extra was added!");
+                                    }
+                                }
+
+                            }.execute(veggie_name, ""+(allowedAmt-amountPacked), "");
+
+
+                            packVeggie(veggie_name, true);
+                        }
+                    })
+                    .setNegativeButton("Vej mere!", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+
+                            dialog.cancel();
+                        }
+                    });
+
+            // create alert dialog
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            // show it
+            alertDialog.show();
+
+
+            Button donateBtn = alertDialog.getButton(DialogInterface.BUTTON_POSITIVE);
+            Button repackBtn = alertDialog.getButton(DialogInterface.BUTTON_NEGATIVE);
+
+            if(donateBtn != null && repackBtn != null){
+                donateBtn.setBackground(getResources().getDrawable(R.drawable.green_button));
+                repackBtn.setBackground(getResources().getDrawable(R.drawable.red_button));
+            }
+
+            // show it
+            //ealertDialog.show();
+
+        } else {
+
+            packVeggie(veggie_name, false);
+        }
+    }
+
+    private void packVeggie(String veggie_name, boolean hasExtra){
+
+        System.out.println("JEG HAR NOK MAYN!");
+
+        // sluk vægten!
+        BluetoothGattCharacteristic characteristic = map
+                .get(RBLService.UUID_BLE_SHIELD_TX);
+
+        String offSign = "0";
+        byte b = 0x00;
+        byte[] tmp = offSign.getBytes();
+        byte[] tx = new byte[tmp.length + 1];
+        tx[0] = b;
+        for (int i = 1; i < tmp.length; i++) {
+            tx[i] = tmp[i - 1];
+        }
+
+        if(characteristic != null) {
+            characteristic.setValue(tx);
+            mBluetoothLeService.writeCharacteristic(characteristic);
+        }
+        // unbind vores service
+        unbindService(mServiceConnection);
+
+        Intent data = new Intent();
+
+        data.putExtra("veg_name", veggie_name);
+        data.putExtra("packedAmt", amountPacked);
+        data.putExtra("compensate", amountPacked);
+        data.putExtra("loggedUser", username);
+
+        if(hasExtra) {
+            data.putExtra("hasExtra", true);
+        }
+
+        if(getParent()== null){
+            setResult(Activity.RESULT_OK, data);
+        } else {
+            getParent().setResult(Activity.RESULT_OK, data);
+        }
+
+        finish();
     }
 
     private void updVeggie(){
