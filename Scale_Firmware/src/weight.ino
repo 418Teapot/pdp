@@ -19,11 +19,15 @@
 #define CMD_STOP '0'
 #define CMD_TARE 't'
 
-// HX711.DOUT	- pin #A1
-// HX711.PD_SCK	- pin #A0
+int greenLed=6; //power on
+int redLed=9; //low batt!!
+int battPin=A0; //read battery voltage
+
+int filter_alpha = 10;
 
 HX711 scale(2, 3);		// parameter "gain" is ommited; the default value 128 is used by the library
 double toGram = 5.68;	//hardware dependent calibration factor, TBD.
+
 
 void setup() {
   #ifdef DEBUG
@@ -33,6 +37,11 @@ void setup() {
   Serial1.begin(19200); //for the BLE module, custom baud rate, see: https://github.com/RedBearLab/Biscuit/wiki/BLEMini_BiscuitCompile#characteristics
   scale.set_scale(2280.f);    // this value is obtained by calibrating the scale with known weights; see the README for details
   scale.tare();			      // reset the scale to 0
+
+  pinMode(greenLed,OUTPUT);
+  pinMode(redLed,OUTPUT);
+  pinMode(battPin,INPUT);
+
 }
 
 //enum to hold different states:
@@ -46,12 +55,14 @@ enum states{
 
 states state=AWAKE; //create instance of state enum.
 
+unsigned int vBatt=1023;
+
 //char incoming;
 
 void loop() {
 double weight=0; //contains measured weight. Is reset at each loop.
 
-delay(200); //for each loop cycle
+//delay(200); //for each loop cycle
 
 DEBUG_PRINT("State: ");
 
@@ -104,9 +115,28 @@ switch(state)
 		Serial1.write(TempString[1]);
 		Serial1.write(TempString[2]);
 		Serial1.write(TempString[3]);
+
+		delay(200); //for each loop cycle
+
 		break;
 	default:
 		break;
 	}
+
+	vBattCheck();
+
 }
 
+void vBattCheck()
+{
+	vBatt = (vBatt * filter_alpha + analogRead(battPin)) / (filter_alpha+1); //moving average filter
+
+	if (vBatt<666) { //Approximately 3,25V (lipo danger-low voltage is at 3,2)
+		digitalWrite(redLed,HIGH);
+		digitalWrite(greenLed,LOW);
+	}
+	else {
+		digitalWrite(redLed,LOW);
+		digitalWrite(greenLed,HIGH);
+	}
+}
