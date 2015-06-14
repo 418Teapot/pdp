@@ -26,7 +26,10 @@ int battPin=A0; //read battery voltage
 int filter_alpha = 10;
 
 HX711 scale(2, 3);		// parameter "gain" is ommited; the default value 128 is used by the library
+//#1:
 double toGram = 5.68;	//hardware dependent calibration factor, TBD.
+//#2:
+//double toGram = 1.0/4.78;	//hardware dependent calibration factor, TBD.
 
 
 void setup() {
@@ -42,6 +45,7 @@ void setup() {
 
   Serial1.begin(19200); //for the BLE module, custom baud rate, see: https://github.com/RedBearLab/Biscuit/wiki/BLEMini_BiscuitCompile#characteristics
   scale.set_scale(2280.f);    // this value is obtained by calibrating the scale with known weights; see the README for details
+
   scale.tare();			      // reset the scale to 0
 
 }
@@ -59,8 +63,6 @@ states state=AWAKE; //create instance of state enum.
 
 unsigned int vBatt=1023;
 
-//char incoming;
-
 void loop() {
 double weight=0; //contains measured weight. Is reset at each loop.
 
@@ -68,6 +70,7 @@ vBattCheck();
 
 delay(200); //for each loop cycle
 
+DEBUG_PRINTLN(" ");
 DEBUG_PRINT("State: ");
 
 switch(state)
@@ -111,6 +114,12 @@ switch(state)
 		/////////////////TODO: IS FOUR BYTES in the TempString TOO SMALL?? CHECK!!!
   		char TempString[4];  //  Hold The Convert Data
   		weight = scale.get_units()*-1*toGram; //get data from scale, and factor in calibration data.
+
+  		DEBUG_PRINT("Weight: ");
+  		for(int i = 0; i<weight;i+=100) DEBUG_PRINT('-');
+  		DEBUG_PRINT("| ");
+  		DEBUG_PRINTLN(weight);
+
   		if(weight<0) weight=0; //eliminate negative numbers
 		dtostrf(weight,3,0,TempString); //dtostrf creates a char array from a float
   		//syntax: dtostrf( [doubleVar] , [sizeBeforePoint] , [sizeAfterPoint] , [WhereToStoreIt] )
@@ -119,7 +128,6 @@ switch(state)
 		Serial1.write(TempString[1]);
 		Serial1.write(TempString[2]);
 		Serial1.write(TempString[3]);
-
 		break;
 	default:
 		break;
@@ -131,6 +139,12 @@ switch(state)
 void vBattCheck()
 {
 	vBatt = (vBatt * filter_alpha + analogRead(battPin)) / (filter_alpha+1); //moving average filter
+
+	DEBUG_PRINT("vBattRAW: ");
+	DEBUG_PRINTLN(vBatt);
+	DEBUG_PRINT("vBatt: ");
+	DEBUG_PRINT((float)(float)5*((float)vBatt/(float)1023));
+	DEBUG_PRINTLN(" V");
 
 	if (vBatt<666) { //Approximately 3,25V (lipo danger-low voltage is at 3,2)
 		digitalWrite(redLed,HIGH);
